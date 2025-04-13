@@ -1,0 +1,232 @@
+@font-face {
+  font-family: "Gyeonggi_Title_Medium";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2410-3@1.0/Title_Medium.woff")
+    format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GyeonggiTitleLight";
+  src: url("https://cdn.jsdelivr.net/gh/wizfile/font/GyeonggiTitleLight.eot");
+  src: url("https://cdn.jsdelivr.net/gh/wizfile/font/GyeonggiTitleLight.woff")
+    format("woff");
+  font-style: normal;
+}
+body {
+  margin: 0 auto;
+  padding: 0;
+  width: 90%;
+  background-color: #0064ff;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  transition: transform 0.8s ease-in-out;
+  gap: 50px;
+}
+
+.name {
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  color: #b3e0ff;
+  font-size: 15em;
+  font-weight: bold;
+  text-shadow: 0 8px 9px #0056cc, 0px -2px 1px #d9f1ff;
+  text-align: center;
+  display: inline-block;
+  white-space: nowrap;
+  transition: transform 0.8s ease-in-out;
+  margin: 0;
+}
+
+.name::after {
+  content: "";
+  display: inline-block;
+  animation: blink 0.8s;
+  color: #b3e0ff;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+nav {
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+  margin-top: 50px;
+  letter-spacing: 3px;
+}
+
+nav a {
+  color: #0064ff;
+  background-color: #edfaff;
+  padding: 30px 40px;
+  font-size: 2em;
+  border-radius: 15px;
+  width: 200px;
+}
+nav a:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  background-color: rgb(255, 255, 148);
+}
+.show-nav nav {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.show-nav .name {
+  transform: translateY(-50px);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(76, 111, 121, 0.601);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#ffffff, #b0d4ea);
+  padding: 20px 50px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 1200px;
+  transform: translateY(-20px);
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 0;
+}
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+.close {
+  position: absolute;
+  top: 30px;
+  right: 50px;
+  font-size: 2em;
+  cursor: pointer;
+  color: #555;
+}
+
+.close:hover {
+  color: #0064ff;
+}
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profile-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile_img {
+  background-image: url("images/profile.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  width: 500px;
+  height: 800px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile-right {
+  flex: 2;
+  padding: 30px;
+  text-align: left;
+}
+
+h1 {
+  font-family: "Gyeonggi_Title_Medium";
+  font-size: 2.5em;
+  color: #3683f5;
+  letter-spacing: 5px;
+}
+
+.intro {
+  font-family: "Gyeonggi_Title_Medium";
+  letter-spacing: 2px;
+  font-size: 2em;
+  color: #555;
+  margin: 10px 0 10px 40px;
+  padding: 0;
+}
+
+.info h3 {
+  font-family: "Gyeonggi_Title_Medium";
+  letter-spacing: 2px;
+  font-size: 1.8em;
+  color: #609bf5;
+  margin: 0;
+}
+
+.info ul {
+  font-family: "GyeonggiTitleLight";
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-left: 43px;
+  font-size: 1.5em;
+  padding: 10px;
+}
+
+li span {
+  color: rgb(128, 128, 128);
+}
+
+.ex h3 {
+  font-family: "Gyeonggi_Title_Medium";
+  letter-spacing: 2px;
+  font-size: 1.8em;
+  color: #609bf5;
+  margin: 0;
+}
+
+.ex ul {
+  font-family: "GyeonggiTitleLight";
+  list-style: none;
+  padding: 0;
+}
