@@ -242,3 +242,81 @@ li span {
   list-style: none;
   padding: 0;
 }
+
+/* -------------------- 반응형 스타일 -------------------- */
+
+/* 태블릿 이하 (최대 1024px) */
+@media screen and (max-width: 1024px) {
+  .name {
+    font-size: 6em;
+  }
+
+  nav a {
+    padding: 20px;
+    font-size: 1.5em;
+    width: 160px;
+  }
+
+  .modal-content {
+    width: 95%;
+    height: 90%;
+  }
+
+  .profile_img {
+    width: 300px;
+    height: 420px;
+  }
+}
+
+/* 모바일 (최대 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    gap: 30px;
+  }
+
+  .name {
+    font-size: 4em;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav a {
+    width: 80%;
+    font-size: 1.3em;
+  }
+
+  .modal-body-profile {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .profile-left,
+  .profile-right {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+  }
+
+  .profile_img {
+    width: 80%;
+    height: auto;
+    aspect-ratio: 3/4;
+  }
+
+  .info h3,
+  .ex h3 {
+    font-size: 1.3em;
+  }
+
+  .info ul,
+  .ex ul {
+    padding-left: 15px;
+  }
+
+  li {
+    font-size: 0.95em;
+  }
+}
