@@ -11,22 +11,22 @@
       <p class="name" id="typing-text"></p>
 
       <nav>
-        <a onclick="openModal('aboutModal')">Profile</a>
+        <a onclick="openModal('profileModal')">Profile</a>
         <a onclick="openModal('experienceModal')">Experience</a>
         <a onclick="openModal('projectsModal')">Project</a>
         <a onclick="openModal('contactModal')">Contact</a>
       </nav>
     </div>
 
-    <div id="aboutModal" class="modal">
+    <div id="profileModal" class="modal">
       <div class="modal-content">
-        <span class="close" onclick="closeModal('aboutModal')">&times;</span>
+        <span class="close" onclick="closeModal('profileModal')">&times;</span>
           <h1>Profile</h1>
           <p class="intro">
             "창의적인 사고와 열정으로 새로운 도전에 끊임없이 나아가는
             주가영입니다."
           </p>
-        <div class="modal-body">
+        <div class="modal-body-profile">
           <div class="profile-left">
             <div class="profile_img"></div>
           </div>
@@ -71,42 +71,10 @@
       <div class="modal-content">
         <span class="close" onclick="closeModal('experienceModal')">&times;</span>
         <h1>Experience</h1>
-        <div class="modal-body">
-          <div class="info">
-              <h3>LG Display</h3>
-              <h4>Micro LED 개발</h4>
-              <p><strong>2023.07 - 2024.07</strong></p>
-    
-              <h4>Electroluminescence 측정</h4>
-              <ul>
-                <li>LIV 및 IV Curve 측정 (전압-전류, 전압-휘도 특성)</li>
-                <li>다양한 환경에서 전기적 특성 분석 및 효율 개선</li>
-                <li>내구성 및 수명 평가</li>
-              </ul>
-    
-              <h4>Photoluminescence 측정</h4>
-              <ul>
-                <li>Chip 외관 검사 및 Spec 설정</li>
-                <li>광학 및 화학적 특성 분석을 통한 개선</li>
-              </ul>
-    
-              <h4>개발 Run 대응</h4>
-              <ul>
-                <li>자재 입고/재고/반출 관리</li>
-                <li>출하 절차 및 물류 상태 모니터링</li>
-              </ul>
-    
-              <h4>Module 구동 및 검토</h4>
-              <ul>
-                <li>휘도 균일성 및 신뢰성 평가</li>
-                <li>장기 구동 상태 모니터링 및 관리</li>
-              </ul>
-    
-            </div>
+        <div class="modal-body-ex">
           </div>
         </div>
       </div>
-    </div>
     
     <div id="projectsModal" class="modal">
       <div class="modal-content">
