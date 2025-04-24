@@ -136,25 +136,34 @@ nav a:hover {
   opacity: 0;
 }
 
-.modal-body {
+.profile-body,
+.career-body {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0;
   height: 85%;
 }
-.modal-contact {
+
+.contact-content {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 0;
+  flex-direction: column;
+  background: linear-gradient(#ffffff, #b0d4ea);
+  padding: 15px 35px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  transform: translateY(-20px);
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 0;
 }
 .modal.show {
   opacity: 1;
   visibility: visible;
 }
 
-.modal.show .modal-content {
+.modal.show .modal-content,
+.contact-content {
   transform: translateY(0);
   opacity: 1;
 }
@@ -211,14 +220,18 @@ h1 {
   text-align: left;
 }
 
-.info h3 {
+h3 {
   font-family: "Gyeonggi_Title_Medium";
   letter-spacing: 2px;
   font-size: 1.5em;
   color: #609bf5;
+}
+.info h3 {
   margin: 0;
 }
-
+.call h3 {
+  margin: 0 0 20px 10px;
+}
 .info ul {
   font-family: "GyeonggiTitleLight";
   list-style: none;
@@ -265,80 +278,7 @@ nav a:hover {
 .show-nav .name {
   transform: translateY(-50px);
 }
-/* -------------------- 반응형 스타일 -------------------- */
-
-/* 태블릿 이하 (최대 1024px) */
-@media screen and (max-width: 1024px) {
-  .name {
-    font-size: 6em;
-  }
-
-  nav a {
-    padding: 20px;
-    font-size: 1.5em;
-    width: 160px;
-  }
-
-  .modal-content {
-    width: 95%;
-    height: 90%;
-  }
-
-  .profile_img {
-    width: 300px;
-    height: 420px;
-  }
-}
-
-/* 모바일 (최대 768px) */
-@media screen and (max-width: 768px) {
-  .container {
-    gap: 30px;
-  }
-
-  .name {
-    font-size: 4em;
-  }
-
-  nav {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  nav a {
-    width: 80%;
-    font-size: 1.3em;
-  }
-
-  .modal-body-profile {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .profile-left,
-  .profile-right {
-    width: 100%;
-    padding: 10px;
-    margin: 0;
-  }
-
-  .profile_img {
-    width: 80%;
-    height: auto;
-    aspect-ratio: 3/4;
-  }
-
-  .info h3,
-  .ex h3 {
-    font-size: 1.3em;
-  }
-
-  .info ul,
-  .ex ul {
-    padding-left: 15px;
-  }
-
-  li {
-    font-size: 0.95em;
-  }
+h3 span {
+  color: black;
+  font-size: 0.8em;
 }
