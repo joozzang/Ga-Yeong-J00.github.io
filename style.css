@@ -127,7 +127,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   background: linear-gradient(#ffffff, #b0d4ea);
-  padding: 10px 30px;
+  padding: 15px 35px;
   border-radius: 15px;
   width: 90%;
   max-width: 900px;
@@ -136,7 +136,7 @@ nav a:hover {
   opacity: 0;
 }
 
-.modal-body-profile {
+.modal-body {
   display: flex;
   flex-direction: row;
   align-items: center;
