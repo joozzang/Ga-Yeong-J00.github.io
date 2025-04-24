@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>주가영 - 포트폴리오</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gayeong's Web Page</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
@@ -21,18 +21,18 @@
     <div id="profileModal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('profileModal')">&times;</span>
-          <h1>Profile</h1>
-          <p class="intro">
-            "창의적인 사고와 열정으로 새로운 도전에 끊임없이 나아가는
-            주가영입니다."
-          </p>
+        <h1>Profile</h1>
+        <p class="intro">
+          "창의적인 사고와 열정으로 새로운 도전에 끊임없이 나아가는
+          주가영입니다."
+        </p>
         <div class="modal-body">
           <div class="profile-left">
             <div class="profile_img"></div>
           </div>
           <div class="profile-right">
             <div class="info">
-                <h3>✏️ Education</h3>
+              <h3>🎓 Education</h3>
               <ul>
                 <li>예일여자고등학교 <br /><span>(2014.03 - 2017.02)</span></li>
                 <li>
@@ -43,7 +43,7 @@
                   Microsoft AI School 5기 <br /><span>(2024.09 - 2025.02)</span>
                 </li>
               </ul>
-              <h3>✏️ Experience</h3>
+              <h3>✨ Experience</h3>
               <ul>
                 <li>
                   LG Display - OLED 개발 <br /><span>(2022.07 - 2023.07)</span>
@@ -54,7 +54,7 @@
                   >
                 </li>
               </ul>
-               <h3>✏️ Certified</h3>
+              <h3>🏅 Certified</h3>
               <ul>
                 <li>Microsoft Certified: Azure AI Fundamentals (AI-900)</li>
                 <li>ITQ 아래한글 A등급</li>
@@ -65,42 +65,55 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <div id="experienceModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('experienceModal')">&times;</span>
-        <h1>Experience</h1>
-        <div class="modal-body">
+      </div>
+      <div id="experienceModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('experienceModal')"
+            >&times;</span
+          >
+          <h1>Experience</h1>
+          <p class="intro">LG Display</p>
+          <div class="modal-body">
+            <button class="ex-left" onclick="openModal('microModal')">
+              Micro LED 개발
+            </button>
+            <button class="ex-right" onclick="openModal('oledModal')">
+              OLED 개발
+            </button>
           </div>
         </div>
       </div>
-    
-    <div id="projectsModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('projectsModal')">&times;</span>
-        <h2>프로젝트</h2>
+
+      <div id="projectsModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('projectsModal')"
+            >&times;</span
+          >
+          <h2>프로젝트</h2>
           <h3>AI 동화책 프로젝트</h3>
           <p>
             난독증 아이들을 위한 AI 동화책을 개발한 프로젝트로, FastAPI 및 Azure
             Speech 통합을 포함한 여러 게임 기능을 구현했습니다.
           </p>
         </div>
-          <h3>법률 ChatBot</h3>
-          <p>
-            이민자를 위한 법률 상담 ChatBot 프로젝트로, Web 화면 디자인 및 TTS
-            라이브러리를 사용한 음성 처리 기능을 구현했습니다.
-          </p>
-        </div>
+        <h3>법률 ChatBot</h3>
+        <p>
+          이민자를 위한 법률 상담 ChatBot 프로젝트로, Web 화면 디자인 및 TTS
+          라이브러리를 사용한 음성 처리 기능을 구현했습니다.
+        </p>
       </div>
-    </div>
 
-    <div id="contactModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal('contactModal')">&times;</span>
-        <h2>연락처</h2>
-        <p>Email: example@email.com</p>
-        <p>Phone: 010-1234-5678</p>
+      <div id="contactModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('contactModal')"
+            >&times;</span
+          >
+          <h1>Contact</h1>
+          <h3>📱 Phone</h3>
+          <h3>📧 Email</h3>
+          <h3>🌐 Notion</h3>
+          <h3>🏠 Home</h3>
+        </div>
       </div>
     </div>
 

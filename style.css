@@ -143,6 +143,12 @@ nav a:hover {
   margin: 0;
   height: 85%;
 }
+.modal-contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+}
 .modal.show {
   opacity: 1;
   visibility: visible;
@@ -227,21 +233,38 @@ li {
 li span {
   color: rgb(128, 128, 128);
 }
-
-.ex h3 {
+.ex-left,
+.ex-right {
+  margin: 10px;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 25px 25px;
+  border-radius: 15px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   font-family: "Gyeonggi_Title_Medium";
   letter-spacing: 2px;
-  font-size: 1.8em;
+  font-size: 1em;
   color: #609bf5;
-  margin: 0;
+  margin: 10px;
+  width: 50%;
 }
 
-.ex ul {
-  font-family: "GyeonggiTitleLight";
-  list-style: none;
-  padding: 0;
+nav a:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  background-color: rgb(255, 255, 148);
 }
 
+.show-nav nav {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.show-nav .name {
+  transform: translateY(-50px);
+}
 /* -------------------- 반응형 스타일 -------------------- */
 
 /* 태블릿 이하 (최대 1024px) */

@@ -21,12 +21,14 @@ window.onload = () => {
   setTimeout(typeText, 500);
 };
 
-function openModal(modalId) {
-  document.getElementById(modalId).classList.add("show");
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) modal.classList.add("show");
 }
 
-function closeModal(modalId) {
-  document.getElementById(modalId).classList.remove("show");
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) modal.classList.remove("show");
 }
 
 window.addEventListener("keydown", function (event) {
