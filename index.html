@@ -20,10 +20,10 @@
     </div>
 
     <div id="profileModal" class="modal">
-      <div class="modal-content">
+      <div class="modal-content profile">
         <span class="close" onclick="closeModal('profileModal')">&times;</span>
         <h1>Profile</h1>
-        <p class="intro">
+        <p>
           "창의적인 사고와 열정으로 새로운 도전에 끊임없이 나아가는
           주가영입니다."
         </p>
@@ -32,7 +32,6 @@
             <div class="profile_img"></div>
           </div>
           <div class="profile-right">
-            <div class="info">
               <h3>🎓 Education</h3>
               <ul>
                 <li>예일여자고등학교 <br /><span>(2014.03 - 2017.02)</span></li>
@@ -62,48 +61,52 @@
                 <li>ITQ 한글엑셀 A등급</li>
                 <li>ITQ 한글파워포인트 A등급</li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      </div>
-      <div id="experienceModal" class="modal">
-        <div class="modal-content">
-          <span class="close" onclick="closeModal('experienceModal')"
-            >&times;</span
-          >
-          <h1>Experience</h1>
-          <p class="intro">LG Display</p>
-          <div class="career-body">
-            <button class="ex-left" onclick="openModal('microModal')">
-              Micro LED 개발
-            </button>
-            <button class="ex-right" onclick="openModal('oledModal')">
-              OLED 개발
-            </button>
           </div>
         </div>
       </div>
 
+      </div><div id="experienceModal" class="modal">
+        <div class="modal-content career">
+          <span class="close" onclick="closeModal('experienceModal')">&times;</span>
+          <h1>Experience</h1>
+          <ul>
+            <li>
+              <button onclick="openModal('microModal')">
+                <span>LG Display </span><br> 
+                <span>Micro LED 개발</span><br>
+                <span>2023.07.20-2024.07.19</span>
+              </button>
+            </li>
+            <li>
+              <button onclick="openModal('oledModal')">
+                <span>LG Display </span><br>
+                <span>OLED 개발</span><br>
+                <span>2022.07.20-2023.07.19</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+
       <div id="projectsModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content project">
           <span class="close" onclick="closeModal('projectsModal')"
             >&times;</span
           >
-          <h2>프로젝트</h2>
+          <h1>Project</h1>
         </div>
-        <h3>법률 ChatBot</h3>
       </div>
 
       <div id="contactModal" class="modal">
-        <div class="contact-content">
+        <div class="modal-content contact">
           <span class="close" onclick="closeModal('contactModal')"
             >&times;</span>
             <h1>Contact</h1>
             <div class="call">
-              <h3>🏠 Home <span>Seoul, South Korea</span></h3>
-          <h3>📧 Email <span>jooooooky415@gmail.com</span></h3>
-          <h3>🌐 Notion <span><a href="https://www.notion.so/Gayeong-s-Portfolio-5c6554701126473bbaa9787b083066fd">Gayeong's Notion</a></span></h3>
+              <h4>🏠 Seoul, South Korea</h4>
+          <h4>📧 jooooooky415@gmail.com</h4>
+          <h4>🌐 <a href="https://www.notion.so/Gayeong-s-Portfolio-5c6554701126473bbaa9787b083066fd">Gayeong's Notion</a></h4>
         </div></div>
       </div>
     </div>
