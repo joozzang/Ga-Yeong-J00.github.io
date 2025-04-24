@@ -123,51 +123,10 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.modal-content {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(#ffffff, #b0d4ea);
-  padding: 15px 35px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 900px;
-  transform: translateY(-20px);
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  opacity: 0;
-}
-
-.profile-body,
-.career-body {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 0;
-  height: 85%;
-}
-
-.contact-content {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(#ffffff, #b0d4ea);
-  padding: 15px 35px;
-  border-radius: 15px;
-  width: 90%;
-  max-width: 400px;
-  transform: translateY(-20px);
-  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
-  opacity: 0;
-}
 .modal.show {
   opacity: 1;
   visibility: visible;
 }
-
-.modal.show .modal-content,
-.contact-content {
-  transform: translateY(0);
-  opacity: 1;
-}
-
 .close {
   position: absolute;
   top: 30px;
@@ -181,6 +140,36 @@ nav a:hover {
   color: #0064ff;
 }
 
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(#ffffff, #a1dbff);
+  padding: 15px 35px;
+  border-radius: 15px;
+  width: 90%;
+  transform: translateY(-20px);
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  opacity: 0;
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.profile {
+  max-width: 900px;
+}
+.career {
+  max-width: 600px;
+}
+.contact {
+  max-width: 400px;
+}
+.profile-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  height: 85%;
+}
 h1 {
   font-family: "Gyeonggi_Title_Medium";
   font-size: 2em;
@@ -188,7 +177,7 @@ h1 {
   letter-spacing: 5px;
 }
 
-.intro {
+.profile p {
   font-family: "Gyeonggi_Title_Medium";
   letter-spacing: 2px;
   font-size: 1.5em;
@@ -220,65 +209,70 @@ h1 {
   text-align: left;
 }
 
-h3 {
+.profile h3 {
   font-family: "Gyeonggi_Title_Medium";
   letter-spacing: 2px;
   font-size: 1.5em;
   color: #609bf5;
-}
-.info h3 {
   margin: 0;
 }
-.call h3 {
-  margin: 0 0 20px 10px;
-}
-.info ul {
+.profile ul,
+.career ul {
   font-family: "GyeonggiTitleLight";
   list-style: none;
   margin-top: 10px;
 }
-
-li {
+.profile li {
   font-size: 1em;
   padding: 5px;
 }
 
-li span {
+.profile span {
   color: rgb(128, 128, 128);
 }
-.ex-left,
-.ex-right {
-  margin: 10px;
+.career ul {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+.career button {
   background: none;
-  border: none;
-  padding: 25px 25px;
-  border-radius: 15px;
-  width: 200px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  padding: 30px 30px;
+  border-radius: 15px;
   font-family: "Gyeonggi_Title_Medium";
   letter-spacing: 2px;
+}
+.career span {
+  line-height: 1.5;
+  color: #d9f1ff;
+}
+.career span:nth-of-type(1) {
+  font-size: 1.8em;
+  color: #5d74a4;
+}
+.career span:nth-of-type(2) {
+  font-size: 1.4em;
+  color: #8a98b6;
+}
+.career span:nth-of-type(3) {
   font-size: 1em;
-  color: #609bf5;
-  margin: 10px;
-  width: 50%;
+  color: #8a98b6;
 }
-
-nav a:hover {
+.career button:hover {
   cursor: pointer;
-  transform: scale(1.2);
-  background-color: rgb(255, 255, 148);
+  transform: scale(1);
+  background-color: #3683f5;
+  color: #d9f1ff;
 }
 
-.show-nav nav {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.show-nav .name {
-  transform: translateY(-50px);
-}
-h3 span {
-  color: black;
-  font-size: 0.8em;
+.call h4 {
+  font-family: "Gyeonggi_Title_Medium";
+  letter-spacing: 2px;
+  font-size: 1.3em;
+  color: #373737;
+  margin: 0 0 20px 10px;
 }
