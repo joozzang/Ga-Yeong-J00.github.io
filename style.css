@@ -155,7 +155,7 @@ nav a:hover {
 }
 
 .profile {
-  max-width: 900px;
+  max-width: 1000px;
 }
 .career {
   max-width: 600px;
@@ -168,7 +168,7 @@ nav a:hover {
   flex-direction: row;
   align-items: center;
   margin: 0;
-  height: 85%;
+  padding: 0;
 }
 h1 {
   font-family: "Gyeonggi_Title_Medium";
@@ -176,7 +176,6 @@ h1 {
   color: #3683f5;
   letter-spacing: 5px;
 }
-
 .profile p {
   font-family: "Gyeonggi_Title_Medium";
   letter-spacing: 2px;
@@ -188,9 +187,10 @@ h1 {
 .profile-left {
   flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0 0 0 20px;
 }
 
 .profile_img {
@@ -198,33 +198,35 @@ h1 {
   background-size: cover;
   background-position: center;
   border-radius: 10px;
-  width: 400px;
-  height: 550px;
+  width: 450px;
+  height: 600px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile-right {
-  flex: 2;
-  margin: 20px 0 0 10px;
+  flex: 1;
   text-align: left;
 }
 
 .profile h3 {
+  display: flex;
+  flex-direction: row;
   font-family: "Gyeonggi_Title_Medium";
   letter-spacing: 2px;
   font-size: 1.5em;
   color: #609bf5;
-  margin: 0;
+  margin: 15px 0 0 5px;
+  padding: 0;
 }
 .profile ul,
 .career ul {
   font-family: "GyeonggiTitleLight";
   list-style: none;
-  margin-top: 10px;
+  margin-top: 5px;
+  line-height: 1.8;
 }
 .profile li {
-  font-size: 1em;
-  padding: 5px;
+  font-size: 1.2em;
 }
 
 .profile span {
@@ -237,42 +239,50 @@ h1 {
   text-align: center;
   gap: 30px;
 }
+
 .career button {
   background: none;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   border: none;
-  padding: 30px 30px;
+  padding: 20px 30px;
   border-radius: 15px;
   font-family: "Gyeonggi_Title_Medium";
   letter-spacing: 2px;
 }
-.career span {
-  line-height: 1.5;
-  color: #d9f1ff;
-}
 .career span:nth-of-type(1) {
   font-size: 1.8em;
-  color: #5d74a4;
+  line-height: 1.4;
+  color: #3683f5;
 }
+
 .career span:nth-of-type(2) {
   font-size: 1.4em;
-  color: #8a98b6;
+  line-height: 1.7;
+  color: #fbfcff;
 }
+
 .career span:nth-of-type(3) {
   font-size: 1em;
+  line-height: 1.9;
   color: #8a98b6;
 }
 .career button:hover {
   cursor: pointer;
   transform: scale(1);
   background-color: #3683f5;
-  color: #d9f1ff;
 }
-
+.career button:hover span {
+  /* color: #fff !important; */
+  color: #caebff !important;
+}
+.career button:hover span:nth-of-type(1) {
+  /* color: #a1dbff !important; */
+  color: #fff !important;
+}
 .call h4 {
   font-family: "Gyeonggi_Title_Medium";
   letter-spacing: 2px;
   font-size: 1.3em;
-  color: #373737;
-  margin: 0 0 20px 10px;
+  color: #609bf5;
+  margin: 0 0 20px 0px;
 }
