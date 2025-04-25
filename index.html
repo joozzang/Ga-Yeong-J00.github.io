@@ -86,6 +86,7 @@
         </div>
       </div>
     </div>
+
     <div id="experienceModal" class="modal">
       <div class="modal-content career">
         <span class="close" onclick="closeModal('experienceModal')"
@@ -94,20 +95,60 @@
         <h1>Experience</h1>
         <ul>
           <li>
-            <button onclick="openModal('microModal')">
-              <span>LG Display </span><br />
+            <button
+              onclick="openModal('microModal'),closeModal('experienceModal')"
+            >
+              <span class="star-text">
+                <svg
+                  class="star-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <polygon
+                    points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"
+                  />
+                </svg>
+                LG Display</span
+              ><br />
               <span>Micro LED 개발</span><br />
               <span>2023.07.20-2024.07.19</span>
             </button>
           </li>
           <li>
-            <button onclick="openModal('oledModal')">
-              <span>LG Display </span><br />
-              <span>OLED 개발</span><br />
+            <button
+              onclick="openModal('oledModal'),closeModal('experienceModal')"
+            >
+              <span class="star-text">
+                <svg
+                  class="star-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <polygon
+                    points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"
+                  />
+                </svg>
+                LG Display</span
+              ><br />
+              <span>OLED 잔상 보상</span><br />
               <span>2022.07.20-2023.07.19</span>
             </button>
           </li>
         </ul>
+      </div>
+    </div>
+
+    <div id="microModal" class="modal">
+      <div class="modal-content micro">
+        <span class="close" onclick="closeModal('microModal')">&times;</span>
+        <h1>Micro LED 개발</h1>
+      </div>
+    </div>
+
+    <div id="OLED Modal" class="modal">
+      <div class="modal-content OLED">
+        <span class="close" onclick="closeModal('OLED Modal')">&times;</span>
+        <h1>OLED 잔상 보상</h1>
       </div>
     </div>
 

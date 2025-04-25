@@ -163,10 +163,6 @@ nav a:hover {
   max-width: 1000px;
 }
 
-.career {
-  max-width: 600px;
-}
-
 .contact {
   max-width: 400px;
 }
@@ -228,8 +224,7 @@ h1,
   flex-direction: row;
 }
 
-.profile ul,
-.career ul {
+.profile ul {
   font-family: "GyeonggiTitleLight";
   list-style: none;
   margin: 5px 0 0 8px;
@@ -245,13 +240,20 @@ h1,
 }
 
 /* ------------------ Career ------------------ */
+
+.career {
+  max-width: 600px;
+}
 .career ul {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  text-align: center;
-  gap: 30px;
-  margin-bottom: 40px;
+  flex-wrap: nowrap;
+  justify-content: center;
+  list-style: none;
+  gap: 50px;
+  margin: 10px 0 20px 0;
 }
 
 .career button {
@@ -261,39 +263,66 @@ h1,
   border-radius: 15px;
   font-family: "Gyeonggi_Title_Medium";
   letter-spacing: 2px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.star-icon {
+  position: absolute;
+  top: -12px; /* 위로 올리기 */
+  left: -28px; /* 왼쪽으로 당기기 */
+  width: 30px;
+  height: 30px;
+  fill: #87cefa;
 }
 
+.star-text {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2em;
+  color: #3b5fe0;
+}
 .career button:hover {
   cursor: pointer;
   background-color: #3683f5;
 }
 
-.career button:hover span {
-  color: #caebff !important;
+.career button:hover .star-text .star-icon {
+  fill: rgb(255, 255, 183) !important;
 }
 
 .career button:hover span:nth-of-type(1) {
   color: #fff !important;
 }
 
+.career button:hover span:nth-of-type(2) {
+  color: rgb(255, 255, 183) !important;
+}
+
+.career button:hover span:nth-of-type(3) {
+  color: #caebff !important;
+}
+
 .career span:nth-of-type(1) {
-  font-size: 1.8em;
+  font-size: 2em;
+  text-align: left;
   color: #3683f5;
   line-height: 1.4;
 }
 
 .career span:nth-of-type(2) {
   font-size: 1.4em;
-  color: #fbfcff;
+  color: #8a98b6;
   line-height: 1.7;
 }
 
 .career span:nth-of-type(3) {
   font-size: 1em;
-  color: #8a98b6;
+  color: #a6b1c9;
   line-height: 1.9;
 }
-
+.micro,
+.oled {
+  max-width: 1000px;
+}
 /* ------------------ Social Icons ------------------ */
 .social-icons {
   display: flex;
