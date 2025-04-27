@@ -138,7 +138,14 @@
     </div>
     <div id="microModal" class="modal">
       <div class="modal-content micro">
+        <button
+          class="back-button"
+          onclick="closeModal('microModal');openModal('experienceModal')"
+        >
+          ◀︎
+        </button>
         <div class="close" onclick="closeModal('microModal')">&times;</div>
+
         <h1>Micro LED 개발</h1>
 
         <ul class="accordion-list">
@@ -268,6 +275,12 @@
 
     <div id="oledModal" class="modal">
       <div class="modal-content oled">
+        <button
+          class="back-button"
+          onclick="closeModal('oledModal');openModal('experienceModal')"
+        >
+          ◀︎
+        </button>
         <div class="close" onclick="closeModal('oledModal')">&times;</div>
         <h1>OLED 잔상 보상</h1>
 

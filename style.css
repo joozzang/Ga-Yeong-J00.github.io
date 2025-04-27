@@ -209,6 +209,7 @@ nav a:hover {
   transform: scale(1);
 }
 .modal-content {
+  position: relative;
   background: linear-gradient(#ffffff, #a1dbff);
   padding: 15px 35px;
   border-radius: 15px;
@@ -222,7 +223,7 @@ nav a:hover {
 
 .close {
   position: absolute;
-  top: 30px;
+  top: 15px;
   right: 30px;
   font-size: 2em;
   color: #555;
@@ -397,13 +398,32 @@ h1 {
   color: #a6b1c9;
   line-height: 1.9;
 }
+.back-button {
+  position: absolute;
+  top: 45%;
+  left: -100px;
+  background: none;
+  border: none;
+  font-size: 5em;
+  color: rgb(255, 255, 183) !important;
+  cursor: pointer;
+  font-family: "Gyeonggi_Title_Medium";
+}
+
+.back-button:hover {
+  color: #609bf5 !important;
+}
 .micro,
 .oled {
   max-width: 600px;
 }
 
+.micro h1,
+.oled h1 {
+  text-align: center;
+}
 .accordion-item {
-  margin-top: 10px;
+  margin-top: 2%;
   margin-bottom: 20px;
   border-radius: 10px;
   overflow: hidden;
@@ -421,7 +441,6 @@ h1 {
   color: #609bf5;
   padding: 15px 10px;
   width: 100%;
-  text-align: left;
   font-size: 1.3em;
   border: none;
   cursor: pointer;
@@ -431,7 +450,10 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, color 0.3s;
 }
-
+.accordion span {
+  flex-grow: 1;
+  text-align: center;
+}
 .accordion:hover,
 .accordion.active {
   background-color: #3683f5;
