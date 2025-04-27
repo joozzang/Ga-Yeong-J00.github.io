@@ -385,28 +385,29 @@
     </div>
 
     <div id="projectsModal" class="modal">
-      <div class="modal-content project">
+      <div class="modal-content projects">
         <div class="close" onclick="closeModal('projectsModal')">&times;</div>
         <h1>Project</h1>
 
-        <div class="project-carousel">
-          <button class="nav-btn" id="project-prev">◀︎</button>
-          <div class="project-card-container">
-            <div class="project-card" id="proj1">
-              <span class="project-card-text"></span>
-              <img class="project-card-img" src="/images/1.png" />
-            </div>
-            <div class="project-card" id="proj2">
-              <span class="project-card-text"></span>
-              <img class="project-card-img" src="/images/2.png" />
-            </div>
-            <div class="project-card" id="proj3">
-              <span class="project-card-text"></span>
-              <img class="project-card-img" src="/images/3.png" />
-            </div>
+        <div class="project-card-container">
+          <div class="project-card" id="proj1">
+            <img class="project-card-img" src="/images/1.png" />
+            <div class="project-description-inline"></div>
           </div>
-          <button class="nav-btn" id="project-next">▶︎</button>
+          <div class="project-card" id="proj2">
+            <img class="project-card-img" src="/images/2.png" />
+            <div class="project-description-inline"></div>
+          </div>
+          <div class="project-card" id="proj3">
+            <img class="project-card-img" src="/images/3.png" />
+            <div class="project-description-inline"></div>
+          </div>
         </div>
+
+        <div class="project-instruction" id="project-instruction">
+          보고 싶은 프로젝트를 선택해주세요.
+        </div>
+
         <button class="detail-btn" id="project-detail-btn">자세히 보기</button>
       </div>
     </div>
