@@ -147,3 +147,9 @@ detailBtn.addEventListener("click", () => {
   closeModal("projectsModal");
   openModal(targetModalId);
 });
+const hamburger = document.getElementById("hamburger");
+const nav = document.querySelector("nav");
+
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("show");
+});
