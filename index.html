@@ -388,6 +388,56 @@
       <div class="modal-content project">
         <div class="close" onclick="closeModal('projectsModal')">&times;</div>
         <h1>Project</h1>
+
+        <div class="project-carousel">
+          <button class="nav-btn" id="project-prev">◀︎</button>
+          <div class="project-card-container">
+            <div class="project-card" id="proj1">
+              <span class="project-card-text"></span>
+              <img class="project-card-img" src="/images/1.png" />
+            </div>
+            <div class="project-card" id="proj2">
+              <span class="project-card-text"></span>
+              <img class="project-card-img" src="/images/2.png" />
+            </div>
+            <div class="project-card" id="proj3">
+              <span class="project-card-text"></span>
+              <img class="project-card-img" src="/images/3.png" />
+            </div>
+          </div>
+          <button class="nav-btn" id="project-next">▶︎</button>
+        </div>
+        <button class="detail-btn" id="project-detail-btn">자세히 보기</button>
+      </div>
+    </div>
+
+    <div id="proj1DetailModal" class="modal">
+      <div class="modal-content">
+        <div class="close" onclick="closeModal('proj1DetailModal')">
+          &times;
+        </div>
+        <h1>도르멍탐라</h1>
+        <p>도르멍 탐라 프로젝트에 대한 상세 설명입니다.</p>
+      </div>
+    </div>
+
+    <div id="proj2DetailModal" class="modal">
+      <div class="modal-content">
+        <div class="close" onclick="closeModal('proj2DetailModal')">
+          &times;
+        </div>
+        <h1>LawBot</h1>
+        <p>LawBot 프로젝트에 대한 상세 설명입니다.</p>
+      </div>
+    </div>
+
+    <div id="proj3DetailModal" class="modal">
+      <div class="modal-content">
+        <div class="close" onclick="closeModal('proj3DetailModal')">
+          &times;
+        </div>
+        <h1>Drawry</h1>
+        <p>Drawry 프로젝트에 대한 상세 설명입니다.</p>
       </div>
     </div>
 
@@ -396,7 +446,6 @@
         <div class="close" onclick="closeModal('contactModal')">&times;</div>
         <h1>Contact</h1>
         <div class="call">
-          <h4>🏠 Seoul, South Korea</h4>
           <h4>📧 jooooooky415@gmail.com</h4>
         </div>
       </div>
