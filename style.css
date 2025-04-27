@@ -190,6 +190,7 @@ nav a:hover {
   align-items: center;
   opacity: 0;
   visibility: hidden;
+  overflow-y: auto;
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 .modal.show {
@@ -450,30 +451,24 @@ h1 {
 }
 
 /* ------------------ Project ------------------ */
-.project {
+.projects {
   max-width: 1000px;
-}
-.project-carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  min-height: 400px;
 }
 
 .project-card-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
-  min-height: 250px;
-  width: 90%;
+  min-height: 300px;
+  gap: 50px;
+  width: auto;
   overflow: hidden;
   position: relative;
-  margin-bottom: 70px;
 }
 
 .project-card {
-  width: 200px;
+  width: 250px;
   height: 200px;
   flex-shrink: 0;
   display: flex;
@@ -481,57 +476,61 @@ h1 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   opacity: 0.5;
-  margin: 0;
+  cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .project-card-img {
   width: 250px;
-  height: 150px;
+  height: 250px;
   border-radius: 10px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.project-card-text {
-  font-size: 1.5em;
-  text-align: center;
-  color: #3683f5;
-  margin-bottom: 10px;
-}
-
-.project-center-card {
+.project-card.active {
   transform: scale(1.2);
   opacity: 1;
   z-index: 10;
 }
-.nav-btn {
-  border: none;
-  background: none;
-  font-size: 2.5em;
+
+.project-description-inline {
+  margin-top: 20px;
+  font-size: 1em;
   color: #3683f5;
-  cursor: pointer;
+  text-align: center;
+  width: 150%;
 }
 
+.project-instruction {
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 1.5em;
+  color: #3683f5;
+  padding: 0;
+  margin: 0;
+}
 .detail-btn {
-  position: absolute; /* ✅ 오른쪽 하단 고정 */
-  bottom: 30px;
-  right: 30px;
+  font-family: "Gyeonggi_Title_Medium";
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #3683f5;
   color: white;
-  font-size: 1.2em;
-  width: 220px;
-  padding: 15px;
+  font-size: 1em;
+  padding: 15px 30px;
   border: none;
   border-radius: 15px;
   cursor: pointer;
   transition: transform 0.3s;
+  display: none;
 }
 
 .detail-btn:hover {
-  transform: scale(1.1);
+  transform: translateX(-50%) scale(1.1);
 }
-
 /* ------------------ Back Button ------------------ */
 .back-button {
   position: absolute;
