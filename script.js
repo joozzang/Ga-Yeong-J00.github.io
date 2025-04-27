@@ -91,35 +91,46 @@ const instructionText = document.getElementById("project-instruction");
 let selectedProjectIndex = -1;
 
 const descriptions = [
-  "🍊 제주 AI 맞춤 여행 추천 플랫폼",
-  "📖 이민자를 위한 한국 법률 번역 챗봇",
-  "✏️ 난독증 아동을 위한 AI 동화책 생성 학습 플랫폼",
+  "🍊 제주 맞춤 여행<br>AI 추천 플랫폼",
+  "📖 이민자를 위한<br>한국 법률 번역 챗봇",
+  "✏️ 난독증 아동을 위한 <br>AI 동화책 생성<br>학습 플랫폼",
 ];
 
 // 카드 클릭 이벤트
 projectCards.forEach((card, index) => {
   card.addEventListener("click", () => {
-    selectedProjectIndex = index;
+    if (selectedProjectIndex === index) {
+      // 이미 선택된 카드를 다시 클릭한 경우
+      selectedProjectIndex = -1;
+    } else {
+      // 다른 카드를 클릭한 경우
+      selectedProjectIndex = index;
+    }
     updateCardStates();
   });
 });
-
-// 카드 스타일 & 설명 업데이트
 function updateCardStates() {
   projectCards.forEach((card, index) => {
     const descDiv = card.querySelector(".project-description-inline");
 
     if (index === selectedProjectIndex) {
       card.classList.add("active");
-      descDiv.innerHTML = descriptions[index].replace(/\n/g, "<br>"); // ✅ 줄바꿈 반영
+      card.style.opacity = "1";
+      descDiv.innerHTML = descriptions[index].replace(/\n/g, "<br>");
     } else {
       card.classList.remove("active");
+      card.style.opacity = "1"; // 다시 모두 선명하게!
       descDiv.innerHTML = "";
     }
   });
 
-  instructionText.style.display = "none";
-  detailBtn.style.display = "block";
+  if (selectedProjectIndex === -1) {
+    instructionText.style.display = "block"; // 선택 해제됐으면 안내문구 다시 보여줌
+    detailBtn.style.display = "none"; // 버튼 숨김
+  } else {
+    instructionText.style.display = "none";
+    detailBtn.style.display = "block";
+  }
 }
 
 // 자세히 보기 버튼 클릭 시
