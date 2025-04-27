@@ -487,7 +487,8 @@ h1 {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s, scale 0.3s;
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  /* transition: transform 0.6s, scale 0.3s; */
   transform-style: preserve-3d;
 }
 
@@ -575,4 +576,156 @@ h1 {
   position: absolute;
   bottom: 10px;
   right: 15px;
+}
+
+/* ------------------ Responsive Design ------------------ */
+/* 햄버거 버튼 기본 숨김 */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  font-size: 2em;
+  color: #fff;
+  z-index: 1001;
+  cursor: pointer;
+}
+
+/* 1. 태블릿 (가로 768px 이하) */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background-color: #edfaff;
+    padding-top: 100px;
+    gap: 30px;
+    transition: left 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.show {
+    left: 0;
+  }
+
+  .container {
+    gap: 30px;
+    height: auto;
+    padding: 50px 20px;
+  }
+
+  .name {
+    font-size: 5em;
+    margin: 50px 0 0;
+  }
+
+  nav a {
+    width: 80%;
+    font-size: 1.5em;
+    padding: 20px;
+  }
+
+  .profile-body {
+    flex-direction: column;
+  }
+
+  .profile_img {
+    width: 80%;
+    height: auto;
+    max-width: 300px;
+    max-height: 400px;
+  }
+
+  .profile-right {
+    text-align: center;
+  }
+
+  .career ul {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .career button {
+    width: 80%;
+    padding: 25px;
+  }
+
+  .projects {
+    max-width: 90%;
+  }
+
+  .project-card-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 90%;
+    height: auto;
+  }
+
+  .project-card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-inner {
+    width: 100%;
+    height: 100%;
+  }
+
+  .detail-btn {
+    font-size: 0.9em;
+    padding: 10px 20px;
+  }
+}
+
+/* 2. 모바일 (가로 480px 이하) */
+@media (max-width: 480px) {
+  .name {
+    font-size: 3em;
+  }
+
+  nav a {
+    font-size: 1.2em;
+    padding: 15px;
+  }
+
+  .profile_img {
+    max-width: 250px;
+    max-height: 350px;
+  }
+
+  .career button {
+    width: 100%;
+  }
+
+  .project-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-description-inline {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+
+  .detail-btn {
+    font-size: 0.8em;
+    padding: 10px 15px;
+  }
 }
