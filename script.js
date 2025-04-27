@@ -1,3 +1,4 @@
+/* ------------------ Typing Effect ------------------ */
 const text = "JOO GA YEONG";
 let index = 0;
 
@@ -5,12 +6,10 @@ function typeText() {
   const nameElement = document.getElementById("typing-text");
 
   if (index < text.length) {
-    nameElement.textContent += text[index];
-    index++;
+    nameElement.textContent += text[index++];
     setTimeout(typeText, 150);
   } else {
     nameElement.classList.add("no-cursor");
-
     setTimeout(() => {
       document.querySelector(".container").classList.add("show-nav");
     }, 1000);
@@ -21,6 +20,7 @@ window.onload = () => {
   setTimeout(typeText, 500);
 };
 
+/* ------------------ Modal Open/Close ------------------ */
 function openModal(id) {
   const modal = document.getElementById(id);
   if (modal) modal.classList.add("show");
@@ -31,7 +31,8 @@ function closeModal(id) {
   if (modal) modal.classList.remove("show");
 }
 
-window.addEventListener("keydown", function (event) {
+// ESC 키로 모달 닫기
+window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     document.querySelectorAll(".modal").forEach((modal) => {
       modal.classList.remove("show");
@@ -39,24 +40,28 @@ window.addEventListener("keydown", function (event) {
   }
 });
 
+// 바깥 클릭하면 모달 닫기
 document.querySelectorAll(".modal").forEach((modal) => {
-  modal.addEventListener("click", function (event) {
+  modal.addEventListener("click", (event) => {
     if (event.target === modal) {
       modal.classList.remove("show");
     }
   });
 });
+
+/* ------------------ Theme Toggle ------------------ */
 const toggleBtn = document.getElementById("theme-toggle");
 toggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
 });
+
+/* ------------------ Accordion ------------------ */
 const accordionButtons = document.querySelectorAll(".accordion");
 
 accordionButtons.forEach((btn) => {
   btn.addEventListener("click", function () {
     const panel = this.nextElementSibling;
 
-    // 1. 모든 다른 버튼과 패널 닫기
     accordionButtons.forEach((otherBtn) => {
       if (otherBtn !== this) {
         otherBtn.classList.remove("active");
@@ -66,7 +71,6 @@ accordionButtons.forEach((btn) => {
       }
     });
 
-    // 2. 현재 클릭한 버튼 & 패널 토글
     this.classList.toggle("active");
 
     if (panel.classList.contains("open")) {
@@ -79,6 +83,7 @@ accordionButtons.forEach((btn) => {
   });
 });
 
+/* ------------------ Project Section ------------------ */
 const projectCards = document.querySelectorAll(".project-card");
 const detailBtn = document.getElementById("project-detail-btn");
 const instructionText = document.getElementById("project-instruction");
@@ -86,11 +91,12 @@ const instructionText = document.getElementById("project-instruction");
 let selectedProjectIndex = -1;
 
 const descriptions = [
-  "AI 기반 제주 맞춤 여행 추천 플랫폼",
-  "이민자를 위한 한국 법률 번역 챗봇",
-  "난독증 아동을 위한 AI 기반 동화책 생성 학습 플랫폼",
+  "🍊 제주 AI 맞춤 여행 추천 플랫폼",
+  "📖 이민자를 위한 한국 법률 번역 챗봇",
+  "✏️ 난독증 아동을 위한 AI 동화책 생성 학습 플랫폼",
 ];
 
+// 카드 클릭 이벤트
 projectCards.forEach((card, index) => {
   card.addEventListener("click", () => {
     selectedProjectIndex = index;
@@ -105,24 +111,20 @@ function updateCardStates() {
 
     if (index === selectedProjectIndex) {
       card.classList.add("active");
-      descDiv.textContent = descriptions[index];
+      descDiv.innerHTML = descriptions[index].replace(/\n/g, "<br>"); // ✅ 줄바꿈 반영
     } else {
       card.classList.remove("active");
-      descDiv.textContent = "";
+      descDiv.innerHTML = "";
     }
   });
 
-  // ✅ 클릭했으면 안내문구 숨기고, detail 버튼 보이게
   instructionText.style.display = "none";
   detailBtn.style.display = "block";
 }
 
-// 자세히 보기 버튼
+// 자세히 보기 버튼 클릭 시
 detailBtn.addEventListener("click", () => {
-  if (selectedProjectIndex === -1) {
-    // 클릭 안 했으면 그냥 아무것도 안함
-    return;
-  }
+  if (selectedProjectIndex === -1) return;
 
   const projectIds = [
     "proj1DetailModal",
