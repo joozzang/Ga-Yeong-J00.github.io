@@ -46,3 +46,35 @@ document.querySelectorAll(".modal").forEach((modal) => {
     }
   });
 });
+const toggleBtn = document.getElementById("theme-toggle");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+});
+const accordionButtons = document.querySelectorAll(".accordion");
+
+accordionButtons.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const panel = this.nextElementSibling;
+
+    // 1. 모든 다른 버튼과 패널 닫기
+    accordionButtons.forEach((otherBtn) => {
+      if (otherBtn !== this) {
+        otherBtn.classList.remove("active");
+        const otherPanel = otherBtn.nextElementSibling;
+        otherPanel.style.maxHeight = null;
+        otherPanel.classList.remove("open");
+      }
+    });
+
+    // 2. 현재 클릭한 버튼 & 패널 토글
+    this.classList.toggle("active");
+
+    if (panel.classList.contains("open")) {
+      panel.style.maxHeight = null;
+      panel.classList.remove("open");
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+      panel.classList.add("open");
+    }
+  });
+});
