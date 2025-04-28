@@ -12,7 +12,7 @@
       <button id="theme-toggle" class="theme-toggle">🌙</button>
 
       <p class="name" id="typing-text"></p>
-      <button class="hamburger" id="hamburger">&#9776;</button>
+      <!-- <button class="hamburger" id="hamburger">&#9776;</button> -->
 
       <nav>
         <a role="button" onclick="openModal('profileModal')">Profile</a>
@@ -274,7 +274,6 @@
         </ul>
       </div>
     </div>
-
     <div id="oledModal" class="modal">
       <div class="modal-content oled">
         <button
@@ -385,7 +384,6 @@
         </ul>
       </div>
     </div>
-
     <div id="projectsModal" class="modal">
       <div class="modal-content projects">
         <div class="close" onclick="closeModal('projectsModal')">&times;</div>
@@ -438,7 +436,6 @@
           &times;
         </div>
         <h1>도르멍탐라</h1>
-        <p>도르멍 탐라 프로젝트에 대한 상세 설명입니다.</p>
       </div>
     </div>
 
@@ -453,12 +450,356 @@
     </div>
 
     <div id="proj3DetailModal" class="modal">
-      <div class="modal-content">
+      <div class="modal-content drawry">
         <div class="close" onclick="closeModal('proj3DetailModal')">
           &times;
         </div>
         <h1>Drawry</h1>
-        <p>Drawry 프로젝트에 대한 상세 설명입니다.</p>
+        <div class="slider">
+          <!-- Page 1 -->
+          <div class="slide" id="page1">
+            <div class="slider-section">
+              <!-- <h2>📷 UI UX</h2> -->
+              <div class="image-slider">
+                <span id="pageImageNumber">1/21</span>
+                <div class="image-slide active">
+                  <img
+                    src="images/drawry/drawry_1.jpg"
+                    alt="서비스 소개 화면"
+                  />
+                  <h3>서비스 소개 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_2.jpg"
+                    alt="서비스 설명 화면"
+                  />
+                  <h3>서비스 설명 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_2-1.jpg"
+                    alt="서비스 설명 화면"
+                  />
+                  <h3>서비스 설명 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_2-2.jpg"
+                    alt="서비스 설명 화면"
+                  />
+                  <h3>서비스 설명 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img src="images/drawry/drawry_3.jpg" alt="로그인 화면" />
+                  <h3>로그인 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img src="images/drawry/drawry_3-1.jpg" alt="로그인 화면" />
+                  <h3>로그인 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img src="images/drawry/drawry_3-2.jpg" alt="로그인 화면" />
+                  <h3>로그인 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img src="images/drawry/drawry_3-3.jpg" alt="로그인 화면" />
+                  <h3>로그인 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_4.jpg"
+                    alt="서비스 시작 화면"
+                  />
+                  <h3>서비스 시작 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_5.jpg"
+                    alt="동화책 선택 화면"
+                  />
+                  <h3>동화책 선택 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_6.jpg"
+                    alt="캐릭터 선택 화면"
+                  />
+                  <h3>캐릭터 선택 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_7.jpg"
+                    alt="캐릭터 행동 선택 화면"
+                  />
+                  <h3>캐릭터 행동 선택 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_7-1.jpg"
+                    alt="캐릭터 행동 선택 화면"
+                  />
+                  <h3>캐릭터 행동 선택 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_7-2.jpg"
+                    alt="캐릭터 행동 선택 화면"
+                  />
+                  <h3>캐릭터 행동 선택 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_8.jpg"
+                    alt="사용자 스케치 화면"
+                  />
+                  <h3>사용자 스케치 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_9.jpg"
+                    alt="스케치 -> 이미지 생성 화면"
+                  />
+                  <h3>스케치 -> 이미지 생성 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_9-1.jpg"
+                    alt="스케치 -> 이미지 생성 화면"
+                  />
+                  <h3>스케치 -> 이미지 생성 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_10.jpg"
+                    alt="1단계 학습게임 - 사과찾기"
+                  />
+                  <h3>1단계 학습게임 - 사과찾기</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_11.jpg"
+                    alt="1단계 학습게임 - 귀쫑긋"
+                  />
+                  <h3>1단계 학습게임 - 귀쫑긋</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_12.jpg"
+                    alt="2단계 학습게임 - OX"
+                  />
+                  <h3>2단계 학습게임 - OX</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_13.jpg"
+                    alt="2단계 학습게임 - 빙고"
+                  />
+                  <h3>2단계 학습게임 - 빙고</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_14.jpg"
+                    alt="2단계 학습게임 - 낱말찾기"
+                  />
+                  <h3>2단계 학습게임 - 낱말찾기</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_15.jpg"
+                    alt="2단계 학습게임 - 쓰기"
+                  />
+                  <h3>2단계 학습게임 - 쓰기</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_16.jpg"
+                    alt="스토리 생성 화면"
+                  />
+                  <h3>스토리 생성 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_17.jpg"
+                    alt="3단계 학습게임 - 단어읽기"
+                  />
+                  <h3>3단계 학습게임 - 단어읽기</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_18.jpg"
+                    alt="3단계 학습게임 - 짧은글읽기"
+                  />
+                  <h3>3단계 학습게임 - 짧은글읽기</h3>
+                </div>
+                <div class="image-slide">
+                  <img
+                    src="images/drawry/drawry_19.jpg"
+                    alt="3단계 학습게임 - 긴글읽기"
+                  />
+                  <h3>3단계 학습게임 - 긴글읽기</h3>
+                </div>
+                <div class="image-slide">
+                  <img src="images/drawry/drawry_20.jpg" alt="동화책 화면" />
+                  <h3>동화책 화면</h3>
+                </div>
+                <div class="image-slide">
+                  <img src="images/drawry/drawry_21.jpg" alt="활동 지표" />
+                  <h3>활동 지표</h3>
+                </div>
+              </div>
+
+              <div class="image-slider-controls">
+                <div class="left-controls">
+                  <button id="prevImageBtn">◀</button>
+                  <button id="toggleSlideBtn">⏸</button>
+                  <!-- 처음엔 "중지"버튼 -->
+                  <button id="nextImageBtn">▶</button>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <button class="accordion">
+                <span>✏️ Project Overview</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
+              <div class="panel">
+                <p>
+                  아이가 그린 그림을 바탕으로 ControlNet을 활용해 동화 삽화를
+                  생성하고, </br>OpenAI와의 대화를 통해 아이가 주도적으로 동화
+                  스토리를 만들어갑니다.</br>9종의 다양한 학습 게임이 단계별로
+                  자연스럽게 배치되어 있어,</br>아이가 쉽고 재미있게 학습에 참여할
+                  수 있도록 설계했습니다.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page 2 -->
+          <div class="slide" id="page2">
+            <div class="accordion-item">
+              <button class="accordion">☁️ Tech Stack</button>
+              <div class="panel">
+                <div class="inner-accordion-item">
+                  <button class="inner-accordion">📁 AI & ML</button>
+                  <div class="inner-panel">
+                    <ul>
+                      <li>ControlNet – 스케치 이미지 생성</li>
+                      <li>Azure OpenAI (GPT-4) – 스토리 생성</li>
+                      <li>RAG – 줄거리 데이터셋 활용 스토리 생성</li>
+                      <li>Azure Speech – 음성 인식 및 TTS API 활용</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="inner-accordion-item">
+                  <button class="inner-accordion">🛠 Tools</button>
+                  <div class="inner-panel">
+                    <ul>
+                      <li>GitHub – 버전 관리 및 코드 공유</li>
+                      <li>Notion – 프로젝트 문서화 및 협업 관리</li>
+                      <li>Canva – 포트폴리오 제작</li>
+
+                    </ul>
+                  </div>
+                </div>                <div class="inner-accordion-item">
+                  <button class="inner-accordion">🛠 Frontend</button>
+                  <div class="inner-panel">
+                    <ul>
+                      <li>HTML / CSS / JavaScript</li>
+                      <li>WebGazer.js – 시선 추적 기반 분석</li>
+                    </ul>
+                  </div>
+                </div>                <div class="inner-accordion-item">
+                  <button class="inner-accordion">🛠 Backend</button>
+                  <div class="inner-panel">
+                    <ul>
+                      <li>Python – 로직 및 서버 구축</li>
+                      <li>FastAPI – 사용자 요청 처리 API</li>
+                      <li>Flask – ControlNet 서버 구축</li>
+                      <li>SQLite – 경량 DB 사용</li>
+                      <li>Azure Blob Storage – 클라우드 저장소</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+</div>
+          
+          
+
+          <!-- Page 3 -->
+          <div class="slide" id="page3">
+            <h2>🛠️ Problem-Solving Experience</h2>
+            <div class="accordion-list">
+              <div class="accordion-item">
+                <button class="accordion">
+                  Stable Diffusion ControlNet 정확도 문제
+                </button>
+                <div class="panel">
+                  <p>
+                    프롬프트 튜닝 및 파라미터 수정으로 이미지 생성 정확도를
+                    향상시켰습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion">HTTPS 및 보안 인증서 문제</button>
+                <div class="panel">
+                  <p>
+                    수동 인증서 발급, Nginx 설정 조정으로 문제를 해결하고
+                    HTTPS를 안정화했습니다.
+                  </p>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <button class="accordion">Azure VM GPU 및 권한 문제</button>
+                <div class="panel">
+                  <p>
+                    리소스 최적화 및 권한 수정으로 배포 문제를 해결했습니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <h2>🌱 Growth</h2>
+            <ul>
+              <li>처음 맡은 팀장 역할로 리더십 성장</li>
+              <li>기술 문제를 함께 극복하며 팀워크 향상</li>
+              <li>사용자 중심 개발 경험</li>
+              <li>실무에 가까운 프로젝트 운영 경험</li>
+            </ul>
+            <div class="external-links">
+              <a href="https://github.com/msai-project3-team4" target="_blank">
+                <img
+                  src="images/github_original.png"
+                  alt="GitHub"
+                  width="20"
+                  height="20"
+                />
+              </a>
+              <a
+                href="https://www.canva.com/design/DAGhr4xHowc/_GBHLOzma_o_bvp_6_oVbA/view?utm_content=DAGhr4xHowc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hfaa540c1b8"
+                target="_blank"
+              >
+                <img src="images/canva.png" alt="Canva" width="10" />
+              </a>
+              <a href="https://youtu.be/7fbKX853FYw" target="_blank">
+                <img
+                  src="images/youtube.png"
+                  alt="Demo Video"
+                  width="30"
+                  height="30"
+                />
+              </a>
+            </div>
+          </div>
+
+          <button class="arrow-button" id="prevButton">◀︎</button>
+          <button class="arrow-button" id="nextButton">▶︎</button>
+        </div>
       </div>
     </div>
 

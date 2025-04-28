@@ -56,24 +56,13 @@ toggleBtn.addEventListener("click", () => {
 });
 
 /* ------------------ Accordion ------------------ */
-const accordionButtons = document.querySelectorAll(".accordion");
+const accordions = document.querySelectorAll(".accordion");
 
-accordionButtons.forEach((btn) => {
-  btn.addEventListener("click", function () {
-    const panel = this.nextElementSibling;
-
-    accordionButtons.forEach((otherBtn) => {
-      if (otherBtn !== this) {
-        otherBtn.classList.remove("active");
-        const otherPanel = otherBtn.nextElementSibling;
-        otherPanel.style.maxHeight = null;
-        otherPanel.classList.remove("open");
-      }
-    });
-
+accordions.forEach((acc) => {
+  acc.addEventListener("click", function () {
     this.classList.toggle("active");
-
-    if (panel.classList.contains("open")) {
+    const panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
       panel.classList.remove("open");
     } else {
@@ -147,9 +136,91 @@ detailBtn.addEventListener("click", () => {
   closeModal("projectsModal");
   openModal(targetModalId);
 });
-const hamburger = document.getElementById("hamburger");
-const nav = document.querySelector("nav");
 
-hamburger.addEventListener("click", () => {
-  nav.classList.toggle("show");
+const slides = document.querySelectorAll(".slide");
+const nextButton = document.getElementById("nextButton");
+const prevButton = document.getElementById("prevButton");
+let currentSlide = 0;
+
+function updateButtons() {
+  prevButton.style.display = currentSlide === 0 ? "none" : "block";
+  nextButton.style.display =
+    currentSlide === slides.length - 1 ? "none" : "block";
+}
+
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+  updateButtons();
+}
+
+nextButton.addEventListener("click", () => {
+  if (currentSlide < slides.length - 1) {
+    currentSlide++;
+    showSlide(currentSlide);
+  }
 });
+
+prevButton.addEventListener("click", () => {
+  if (currentSlide > 0) {
+    currentSlide--;
+    showSlide(currentSlide);
+  }
+});
+
+// 초기 슬라이드 보이기
+showSlide(currentSlide);
+
+const imageSlides = document.querySelectorAll(".image-slide");
+const prevImageBtn = document.getElementById("prevImageBtn");
+const nextImageBtn = document.getElementById("nextImageBtn");
+const pageImageNumber = document.getElementById("pageImageNumber");
+const toggleSlideBtn = document.getElementById("toggleSlideBtn");
+
+let currentImage = 0;
+let autoSlideInterval;
+
+function showImageSlide(index) {
+  imageSlides.forEach((slide, i) => {
+    slide.classList.toggle("active", i === index);
+  });
+  pageImageNumber.textContent = `${currentImage + 1}/${imageSlides.length}`;
+}
+
+function startAutoSlide() {
+  autoSlideInterval = setInterval(() => {
+    currentImage = (currentImage + 1) % imageSlides.length;
+    showImageSlide(currentImage);
+  }, 5000);
+}
+
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+}
+
+// 시작/중지 토글
+toggleSlideBtn.addEventListener("click", () => {
+  if (autoSlideInterval) {
+    stopAutoSlide();
+    toggleSlideBtn.textContent = "▶️"; // 시작 버튼으로 바꿈
+    autoSlideInterval = null;
+  } else {
+    startAutoSlide();
+    toggleSlideBtn.textContent = "⏸️"; // 중지 버튼으로 바꿈
+  }
+});
+
+nextImageBtn.addEventListener("click", () => {
+  currentImage = (currentImage + 1) % imageSlides.length;
+  showImageSlide(currentImage);
+});
+
+prevImageBtn.addEventListener("click", () => {
+  currentImage = (currentImage - 1 + imageSlides.length) % imageSlides.length;
+  showImageSlide(currentImage);
+});
+
+// 시작할 때 초기화
+showImageSlide(currentImage);
+startAutoSlide();
