@@ -582,11 +582,39 @@ h1 {
 }
 
 /* ------------------ Project Detail ------------------ */
+/* ------------------ Modal & Slider ------------------ */
 .drawry {
-  max-width: 800px;
+  max-width: 850px;
 }
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  padding: 0 50px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.slide {
+  display: none;
+  padding: 0;
+}
+.slide.active {
+  display: block;
+}
+
+.slider-section {
+  padding: 10px;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* ------------------ Arrow Buttons ------------------ */
 .arrow-button {
-  position: absolute; /* fixed X, absolute O */
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -594,70 +622,27 @@ h1 {
   color: #3683f5;
   font-size: 3em;
   cursor: pointer;
+  padding: 0;
+  z-index: 1000;
 }
 
 #prevButton {
-  left: 0; /* 왼쪽에서 10px 떨어지게 */
+  left: 0;
 }
 
 #nextButton {
-  right: 0; /* 오른쪽에서 10px 떨어지게 */
-}
-.slider {
-  position: relative;
-  overflow: hidden;
-  padding: 0 70px 0 70px; /* 좌우에 70px 정도 공간을 줘서 화살표 안 겹치게 */
-  margin: 0 auto;
-}
-.slide {
-  display: none;
-  padding: 0;
-  /* padding: 10px; */
-}
-.slide.active {
-  display: block;
+  right: 0;
 }
 
-.external-links {
-  margin-top: 20px;
-  display: flex;
-  gap: 5px;
-  bottom: 10px;
-  right: 15px;
-}
-.external-links img {
-  width: 30px;
-  height: 30px;
-}
-.slide .accordion-item .panel {
-  padding: 0 20px; /* 기본 패딩 추가해서 안쪽 여백 생기게 */
-  text-align: center; /* 안에 p 태그 중앙 정렬 */
-  box-sizing: border-box;
-  line-height: 1.5;
-  font-size: 1em;
-}
-.slider-section {
-  padding: 10px 0 0 10px;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-.image-slider-controls {
-  display: flex;
-  justify-content: flex-start; /* 버튼들을 왼쪽 정렬 */
-  align-items: center;
-  width: 100%;
-  position: relative;
-  margin-top: 10px;
-}
-
+/* ------------------ Image Slider ------------------ */
 .image-slider {
-  margin: 0 auto;
   position: relative;
   width: 100%;
-  max-width: 700px;
+  max-width: 750px;
+  margin: 0 auto;
   overflow: hidden;
 }
+
 .image-slide {
   display: none;
   text-align: center;
@@ -666,20 +651,9 @@ h1 {
   display: block;
 }
 .image-slide img {
-  width: 600px;
+  width: 650px;
   height: 350px;
   border-radius: 10px;
-}
-#pageImageNumber {
-  position: absolute;
-  z-index: 10;
-  font-weight: bold;
-  font-size: 1.5em;
-  background: rgba(255, 255, 255, 0.7);
-  color: #3683f5;
-  padding: 4px 8px;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .image-slide h3 {
@@ -694,16 +668,31 @@ h1 {
   color: #333;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.left-controls {
+
+#pageImageNumber {
   position: absolute;
-  bottom: 10px;
-  left: 0px;
+  z-index: 10;
+  font-weight: bold;
+  font-size: 1.5em;
+  background: rgba(255, 255, 255, 0.7);
+  color: #3683f5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------ Image Slider Controls ------------------ */
+.image-slider-controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
   gap: 5px;
   align-items: center;
 }
 
-.left-controls button,
-.left-controls span {
+.image-slider-controls button,
+.image-slider-controls span {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
   padding: 4px 8px;
@@ -711,4 +700,46 @@ h1 {
   color: #609bf5;
   font-size: 1em;
   cursor: pointer;
+}
+
+/* ------------------ External Links ------------------ */
+.external-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+}
+
+.external-links img {
+  width: 30px;
+  height: 30px;
+}
+
+/* ------------------ Accordion Panels inside Slides ------------------ */
+.slide .accordion-item .panel {
+  padding: 0 20px;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 1.5;
+  font-size: 1em;
+}
+
+/* ------------------ Grid Layout ------------------ */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.grid-item strong {
+  font-size: 1.2em;
+  margin-top: 10px;
+  text-align: start;
+}
+
+.grid-item li {
+  text-align: start;
+  padding-left: 10px;
 }

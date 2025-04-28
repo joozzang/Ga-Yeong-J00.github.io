@@ -393,7 +393,7 @@
           <div class="project-card" id="proj1">
             <div class="card-inner">
               <div class="card-front">
-                <img class="project-card-img" src="/images/1.png" />
+                <img class="project-card-img" src="images/jeju.png" />
               </div>
               <div class="card-back">
                 <div class="project-description-inline"></div>
@@ -403,7 +403,7 @@
           <div class="project-card" id="proj2">
             <div class="card-inner">
               <div class="card-front">
-                <img class="project-card-img" src="/images/2.png" />
+                <img class="project-card-img" src="images/lawbot.png" />
               </div>
               <div class="card-back">
                 <div class="project-description-inline"></div>
@@ -413,7 +413,7 @@
           <div class="project-card" id="proj3">
             <div class="card-inner">
               <div class="card-front">
-                <img class="project-card-img" src="/images/3.png" />
+                <img class="project-card-img" src="images/drawry.png" />
               </div>
               <div class="card-back">
                 <div class="project-description-inline"></div>
@@ -646,18 +646,15 @@
                 <div class="image-slide">
                   <img src="images/drawry/drawry_21.jpg" alt="활동 지표" />
                   <h3>활동 지표</h3>
-                </div>
-              </div>
-
-              <div class="image-slider-controls">
-                <div class="left-controls">
-                  <button id="prevImageBtn">◀</button>
-                  <button id="toggleSlideBtn">⏸</button>
-                  <!-- 처음엔 "중지"버튼 -->
-                  <button id="nextImageBtn">▶</button>
-                </div>
+                </div>              
+                <div class="image-slider-controls">
+                    <button id="prevImageBtn">◀</button>
+                    <button id="toggleSlideBtn">⏸</button>
+                    <button id="nextImageBtn">▶</button>
+                  </div>
               </div>
             </div>
+
             <div class="accordion-item">
               <button class="accordion">
                 <span>✏️ Project Overview</span>
@@ -678,42 +675,38 @@
           </div>
 
           <!-- Page 2 -->
-          <div class="slide" id="page2">
+          <div class="slide" id="page2"> 
             <div class="accordion-item">
-              <button class="accordion">☁️ Tech Stack</button>
+              <button class="accordion">
+                <span>☁️ Tech Stack</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
               <div class="panel">
-                <div class="inner-accordion-item">
-                  <button class="inner-accordion">📁 AI & ML</button>
-                  <div class="inner-panel">
+                <div class="grid-container">
+                  <div class="grid-item">
+                    <strong>📁 AI & ML</strong>
                     <ul>
                       <li>ControlNet – 스케치 이미지 생성</li>
                       <li>Azure OpenAI (GPT-4) – 스토리 생성</li>
                       <li>RAG – 줄거리 데이터셋 활용 스토리 생성</li>
-                      <li>Azure Speech – 음성 인식 및 TTS API 활용</li>
+                      <li>Azure Speech – TTS API 활용 음성 출력</li>
                     </ul>
-                  </div>
-                </div>
-                <div class="inner-accordion-item">
-                  <button class="inner-accordion">🛠 Tools</button>
-                  <div class="inner-panel">
+                    <strong>🛠 Tools</strong>
                     <ul>
                       <li>GitHub – 버전 관리 및 코드 공유</li>
                       <li>Notion – 프로젝트 문서화 및 협업 관리</li>
                       <li>Canva – 포트폴리오 제작</li>
-
                     </ul>
                   </div>
-                </div>                <div class="inner-accordion-item">
-                  <button class="inner-accordion">🛠 Frontend</button>
-                  <div class="inner-panel">
+                  <div class="grid-item">
+                    <strong>🛠 Frontend</strong>
                     <ul>
                       <li>HTML / CSS / JavaScript</li>
                       <li>WebGazer.js – 시선 추적 기반 분석</li>
                     </ul>
-                  </div>
-                </div>                <div class="inner-accordion-item">
-                  <button class="inner-accordion">🛠 Backend</button>
-                  <div class="inner-panel">
+                    <strong>🛠 Backend</strong>
                     <ul>
                       <li>Python – 로직 및 서버 구축</li>
                       <li>FastAPI – 사용자 요청 처리 API</li>
@@ -724,10 +717,56 @@
                   </div>
                 </div>
               </div>
+            </li>
+          </ul>
+          </div>
+        
+          <div class="accordion-item">
+            <button class="accordion">
+              <span>☁️ Tech Stack</span>
+              <svg class="accordion-icon" viewBox="0 0 24 24">
+                <path d="M6 9l6 6 6-6"></path>
+              </svg>
+            </button>
+            <div class="panel">
+              <div class="grid-container">
+                <div class="grid-item">
+                  <strong>📁 AI & ML</strong>
+                  <ul>
+                    <li>ControlNet – 스케치 이미지 생성</li>
+                    <li>Azure OpenAI (GPT-4) – 스토리 생성</li>
+                    <li>RAG – 줄거리 데이터셋 활용 스토리 생성</li>
+                    <li>Azure Speech – TTS API 활용 음성 출력</li>
+                  </ul>
+                  <strong>🛠 Tools</strong>
+                  <ul>
+                    <li>GitHub – 버전 관리 및 코드 공유</li>
+                    <li>Notion – 프로젝트 문서화 및 협업 관리</li>
+                    <li>Canva – 포트폴리오 제작</li>
+                  </ul>
+                </div>
+                <div class="grid-item">
+                  <strong>🛠 Frontend</strong>
+                  <ul>
+                    <li>HTML / CSS / JavaScript</li>
+                    <li>WebGazer.js – 시선 추적 기반 분석</li>
+                  </ul>
+                  <strong>🛠 Backend</strong>
+                  <ul>
+                    <li>Python – 로직 및 서버 구축</li>
+                    <li>FastAPI – 사용자 요청 처리 API</li>
+                    <li>Flask – ControlNet 서버 구축</li>
+                    <li>SQLite – 경량 DB 사용</li>
+                    <li>Azure Blob Storage – 클라우드 저장소</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            
-</div>
-          
+          </li>
+        </ul>
+        </div>
+        
+        </div>
           
 
           <!-- Page 3 -->
@@ -800,8 +839,7 @@
           <button class="arrow-button" id="prevButton">◀︎</button>
           <button class="arrow-button" id="nextButton">▶︎</button>
         </div>
-      </div>
-    </div>
+      </div></div>
 
     <div id="contactModal" class="modal">
       <div class="modal-content contact">
