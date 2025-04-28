@@ -138,6 +138,7 @@
         </ul>
       </div>
     </div>
+
     <div id="microModal" class="modal">
       <div class="modal-content micro">
         <button
@@ -274,6 +275,7 @@
         </ul>
       </div>
     </div>
+
     <div id="oledModal" class="modal">
       <div class="modal-content oled">
         <button
@@ -384,6 +386,7 @@
         </ul>
       </div>
     </div>
+
     <div id="projectsModal" class="modal">
       <div class="modal-content projects">
         <div class="close" onclick="closeModal('projectsModal')">&times;</div>
@@ -666,8 +669,8 @@
                 <p>
                   아이가 그린 그림을 바탕으로 ControlNet을 활용해 동화 삽화를
                   생성하고, </br>OpenAI와의 대화를 통해 아이가 주도적으로 동화
-                  스토리를 만들어갑니다.</br>9종의 다양한 학습 게임이 단계별로
-                  자연스럽게 배치되어 있어,</br>아이가 쉽고 재미있게 학습에 참여할
+                  스토리를 만들어갑니다.</br>동화 제작 과정 속에 9종의 다양한 학습 게임이 단계별로
+                  자연스럽게 배치되어 있어,</br>아이가 이야기 속에 몰입한 채 쉽고 재미있게 학습에 참여할
                   수 있도록 설계했습니다.
                 </p>
               </div>
@@ -676,50 +679,6 @@
 
           <!-- Page 2 -->
           <div class="slide" id="page2"> 
-            <div class="accordion-item">
-              <button class="accordion">
-                <span>☁️ Tech Stack</span>
-                <svg class="accordion-icon" viewBox="0 0 24 24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </button>
-              <div class="panel">
-                <div class="grid-container">
-                  <div class="grid-item">
-                    <strong>📁 AI & ML</strong>
-                    <ul>
-                      <li>ControlNet – 스케치 이미지 생성</li>
-                      <li>Azure OpenAI (GPT-4) – 스토리 생성</li>
-                      <li>RAG – 줄거리 데이터셋 활용 스토리 생성</li>
-                      <li>Azure Speech – TTS API 활용 음성 출력</li>
-                    </ul>
-                    <strong>🛠 Tools</strong>
-                    <ul>
-                      <li>GitHub – 버전 관리 및 코드 공유</li>
-                      <li>Notion – 프로젝트 문서화 및 협업 관리</li>
-                      <li>Canva – 포트폴리오 제작</li>
-                    </ul>
-                  </div>
-                  <div class="grid-item">
-                    <strong>🛠 Frontend</strong>
-                    <ul>
-                      <li>HTML / CSS / JavaScript</li>
-                      <li>WebGazer.js – 시선 추적 기반 분석</li>
-                    </ul>
-                    <strong>🛠 Backend</strong>
-                    <ul>
-                      <li>Python – 로직 및 서버 구축</li>
-                      <li>FastAPI – 사용자 요청 처리 API</li>
-                      <li>Flask – ControlNet 서버 구축</li>
-                      <li>SQLite – 경량 DB 사용</li>
-                      <li>Azure Blob Storage – 클라우드 저장소</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ul>
-          </div>
         
           <div class="accordion-item">
             <button class="accordion">
@@ -729,43 +688,89 @@
               </svg>
             </button>
             <div class="panel">
-              <div class="grid-container">
-                <div class="grid-item">
-                  <strong>📁 AI & ML</strong>
+              <div class="tab-container">
+                <div class="tab-buttons tech">
+                  <button class="tab-button active" data-tab="tab-ai">📁 AI & ML</button>
+                  <button class="tab-button" data-tab="tab-tools">🛠 Tools</button>
+                  <button class="tab-button" data-tab="tab-frontend">🛠 Frontend</button>
+                  <button class="tab-button" data-tab="tab-backend">🛠 Backend</button>
+                </div>
+                <div class="tab-contents">
+                  <div id="tab-ai" class="tab-content active">
+                    <ul>
+                      <li>ControlNet – 스케치 이미지 생성</li>
+                      <li>Azure OpenAI (GPT-4) – 스토리 생성</li>
+                      <li>RAG – 동화 줄거리 데이터셋 활용 스토리 생성</li>
+                      <li>Azure Speech – TTS API 활용 음성 출력</li>
+                    </ul>
+                  </div>
+                  <div id="tab-tools" class="tab-content">
+                    <ul>
+                      <li>GitHub – 버전 관리 및 코드 공유</li>
+                      <li>Notion – 프로젝트 문서화 및 협업 관리</li>
+                      <li>Canva – 발표 자료 및 포트폴리오 제작</li>
+                    </ul>
+                  </div>
+                  <div id="tab-frontend" class="tab-content">
+                    <ul>
+                      <li>HTML / CSS - 사용자 인터페이스</li>
+                      <li>Javascript - 기능 구현</li>
+                      <li>WebGazer.js – 사용자 시선 추적 분석</li>
+                    </ul>
+                  </div>
+                  <div id="tab-backend" class="tab-content">
+                    <ul>
+                      <li>Python – 전반적인 로직 및 서버 구축</li>
+                      <li>FastAPI – 웹 통합 및 사용자 요청 처리 API</li>
+                      <li>Flask – ControlNet 서버 구축</li>
+                      <li>SQLite – 사용자 데이터 및 동화 이미지 저장 DB 사용</li>
+                      <li>Azure Blob Storage – OpenAI 생성 스토리 저장 및 관리</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>            
+        </div>
+        
+        <div class="accordion-item">
+          <button class="accordion">
+            <span>👩‍💻 Role & Contributions</span>
+            <svg class="accordion-icon" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6"></path>
+            </svg>
+          </button>
+        
+          <div class="panel">
+            <div class="tab-container">
+              <div class="tab-buttons role">
+                <button class="tab-button active" data-tab="tab-pm">📋 팀장 / PM</button>
+                <button class="tab-button" data-tab="tab-tech">💻 기술 구현</button>
+              </div>
+        
+              <div class="tab-contents">
+                <div id="tab-pm" class="tab-content active">
                   <ul>
-                    <li>ControlNet – 스케치 이미지 생성</li>
-                    <li>Azure OpenAI (GPT-4) – 스토리 생성</li>
-                    <li>RAG – 줄거리 데이터셋 활용 스토리 생성</li>
-                    <li>Azure Speech – TTS API 활용 음성 출력</li>
-                  </ul>
-                  <strong>🛠 Tools</strong>
-                  <ul>
-                    <li>GitHub – 버전 관리 및 코드 공유</li>
-                    <li>Notion – 프로젝트 문서화 및 협업 관리</li>
-                    <li>Canva – 포트폴리오 제작</li>
+                    <li>프로젝트 총괄 기획 및 일정 관리</li>
+                    <li>팀워크 기반 역할 분담</li>
+                    <li>Canva 워크플로우 보드를 활용한 협업 프로세스 구축</li>
                   </ul>
                 </div>
-                <div class="grid-item">
-                  <strong>🛠 Frontend</strong>
+        
+                <div id="tab-tech" class="tab-content">
                   <ul>
-                    <li>HTML / CSS / JavaScript</li>
-                    <li>WebGazer.js – 시선 추적 기반 분석</li>
-                  </ul>
-                  <strong>🛠 Backend</strong>
-                  <ul>
-                    <li>Python – 로직 및 서버 구축</li>
-                    <li>FastAPI – 사용자 요청 처리 API</li>
-                    <li>Flask – ControlNet 서버 구축</li>
-                    <li>SQLite – 경량 DB 사용</li>
-                    <li>Azure Blob Storage – 클라우드 저장소</li>
+                    <li>HTML/CSS/JavaScript를 활용한 학습 게임 및 동화책 UI/UX 설계 및 기능 구현</li>
+                    <li>FastAPI 기반 프론트-백엔드 웹 통합으로 전체 시스템 연동</li>
+                    <li>Azure Speech TTS API 연동을 통한 음성 서비스 구현</li>
+                    <li>RAG 기반 스토리 생성을 위한 데이터 전처리</li>
+                    <li>Canva를 활용한 시연 영상 제작</li>
                   </ul>
                 </div>
               </div>
             </div>
-          </li>
-        </ul>
+          </div>
         </div>
         
+
         </div>
           
 
@@ -839,7 +844,8 @@
           <button class="arrow-button" id="prevButton">◀︎</button>
           <button class="arrow-button" id="nextButton">▶︎</button>
         </div>
-      </div></div>
+      </div>
+    </div>
 
     <div id="contactModal" class="modal">
       <div class="modal-content contact">
