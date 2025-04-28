@@ -774,7 +774,6 @@ h1 {
 
 .tab-contents {
   width: 95%;
-  min-height: 200px;
   background-color: #ffffff;
   border: 1px solid #d0d7e2;
   border-radius: 8px;
@@ -787,7 +786,12 @@ h1 {
   justify-content: center; /* ✅ 세로 가운데 */
   align-items: center; /* ✅ 가로 가운데 */
 }
-
+.tab-contents.tech {
+  min-height: 175px;
+}
+.tab-contents.role {
+  min-height: 250px;
+}
 .tab-contents ul {
   list-style: none;
   padding: 0;
@@ -796,7 +800,7 @@ h1 {
 }
 
 .tab-contents ul li {
-  padding: 5px 0;
+  padding: 3px 0;
   margin: 0;
   text-align: left; /* 왼쪽 정렬 (선택) */
 }
