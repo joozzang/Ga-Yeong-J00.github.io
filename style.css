@@ -601,7 +601,8 @@ h1 {
 
 /* ------------------ Project Detail ------------------ */
 /* ------------------ Modal & Slider ------------------ */
-.drawry {
+.drawry,
+.lawbot {
   max-width: 850px;
 }
 
@@ -670,11 +671,13 @@ h1 {
   z-index: 1000;
 }
 
-#prevButton {
+#prevButton,
+#lawprevButton {
   left: 0;
 }
 
-#nextButton {
+#nextButton,
+#lawnextButton {
   right: 0;
 }
 

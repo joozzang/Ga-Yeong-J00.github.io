@@ -436,6 +436,156 @@
     </div>
  
 
+    <div id="proj2DetailModal" class="modal">
+      <div class="modal-content lawbot">
+        <div class="close" onclick="closeModal('proj2DetailModal')">
+          &times;
+        </div>
+        <h1>LawBot</h1>    <div class="slider">
+          <div class="slide" id="lawpage1">
+            <div class="slider-section">
+              <div class="image-slider">
+                <span id="lawpageImageNumber">1/N</span>
+                <div class="image-slide active">
+                  <img src="images/lawbot/lawbot_1.jpg" alt="서비스 메인 화면" />
+                  <h3>서비스 메인 화면</h3>
+                </div><div class="image-slide active">
+                  <img src="images/lawbot/lawbot_2.jpg" alt="자동 응답 화면" />
+                  <h3>자동 응답 화면</h3>
+                </div><div class="image-slide active">
+                  <img src="images/lawbot/lawbot_3.jpg" alt="법령 검색 화면" />
+                  <h3>법령 검색 화면</h3>
+                </div><div class="image-slide active">
+                  <img src="images/lawbot/lawbot_4.jpg" alt="대화 저장 기능 화면" />
+                  <h3>대화 저장 기능 화면</h3>
+                </div>
+                <div class="image-slider-controls">
+                  <button id="lawprevImageBtn">◀</button>
+                  <button id="lawtoggleSlideBtn">⏸</button>
+                  <button id="lawnextImageBtn">▶</button>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <button class="accordion">
+                <span>✏️ Project Overview</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
+              <div class="panel">
+                <p>이민자 및 외국인들이 일상 속에서 겪는 법률 문제에 보다 쉽게 접근할 수 있도록,<br> 
+                  GPT-4와 RAG 기술을 활용한 다국어 법률 상담 챗봇을 개발했습니다. <br>
+                  언어 장벽, 정보 부족, 법률 접근성의 한계를 해결하기 위해 <br>
+                  자연어 기반 상담, 자동 번역, 음성 입출력 기능을 도입하였고, <br>
+                  Azure AI 서비스와 오픈 소스 기술을 결합해 <br>
+                  웹 기반의 실용적이고 접근성 높은 서비스로 구현했습니다.<br></p>
+              </div>
+            </div>
+          </div>
+    
+          <div class="slide" id="lawpage2">
+            <div class="accordion-item">
+              <button class="accordion">
+                <span>☁️ Tech Stack</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
+              <div class="panel">
+                <div class="tab-container">
+                  <div class="tab-buttons tech">
+                    <button class="tab-button active" data-tab="tab-ai">📁 AI & ML</button>
+                    <button class="tab-button" data-tab="tab-tools">🛠 Tools</button>
+                    <button class="tab-button" data-tab="tab-frontend">🛠 Frontend</button>
+                    <button class="tab-button" data-tab="tab-backend">🛠 Backend</button>
+                  </div>
+                  <div class="tab-contents tech">
+                    <div id="lawtab-ai" class="tab-content active">
+                      <ul><li>Azure Translator – 다국어 번역 처리</li>
+                        <li>Azure AI Search – 법률 문서 검색 및 연동</li>
+                        <li>Azure OpenAI (GPT-4) – 사용자 질의에 대한 자연어 응답</li>
+                        <li>RAG (Retrieval-Augmented Generation) – 검색 기반 응답 정확도 향상</li></ul>
+                    </div>
+                    <div id="lawtab-tools" class="tab-content">
+                      <ul><li>GitHub – 버전 관리 및 코드 협업</li>
+                        <li>Confluence – 프로젝트 문서화 및 협업 프로세스 관리</li>
+                        <li>Canva – 발표 자료 및 시각적 콘텐츠 제작</li></ul>
+                    </div>
+                    <div id="lawtab-frontend" class="tab-content">
+                      <ul>
+                        <li>HTML / CSS - 사용자 인터페이스</li>
+                        <li>Javascript - 기능 구현</li>
+                      <li>Web Speech API – 음성 인식 및 다국어 TTS 처리</li></ul>
+                    </div>
+                    <div id="lawtab-backend" class="tab-content">
+                      <ul><li>FastAPI – RESTful API 서버 개발</li>
+                        <li>Docker – 컨테이너 기반 환경 구성 및 배포</li>
+                        <li>Nginx – 리버스 프록시 및 정적 파일 서비스</li>
+                        <li>Azure Blob Storage – 사용자 데이터 저장 및 관리</li></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <button class="accordion">
+                <span>👩‍💻 Role & Contributions</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
+              <div class="panel">
+                <div class="tab-container">
+                  <div class="tab-contents">
+                    <div id="lawtab-pm" class="tab-content active">
+                      <ul><li>GPT-4 및 RAG 기반 법률 Q&A 챗봇의 프론트엔드 개발 주도</li>
+                        <li>다국어 UI 및 음성 인식/합성 기능(Web Speech API) 구현</li>
+                        <li>대화 저장 기능 추가로 사용자 경험 향상</li>
+                        <li>발표 자료 및 프로젝트 시연 영상 제작</li></ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <div class="slide" id="lawpage3">
+            <div class="accordion-item problem-solving">
+              <button class="accordion">
+                <span>🛠️ Problem-Solving Experience</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
+              <div class="panel">
+                <div class="inner-container">
+                  <button class="open-problem-modal" data-target="problem-modalX1">🎯 문제1</button>
+                  <button class="open-problem-modal" data-target="problem-modalX2">🔐 문제2</button>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item problem-solving">
+              <button class="accordion">
+                <span>🌱 Growth</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </button>
+              <div class="panel inner-container">
+              </div>
+            </div>
+          </div>
+    
+          <button class="arrow-button" id="lawprevButton">◀︎</button>
+          <button class="arrow-button" id="lawnextButton">▶︎</button>
+        </div>
+      </div>
+    </div>
+    
 
     <div id="proj3DetailModal" class="modal">
       <div class="modal-content drawry">
