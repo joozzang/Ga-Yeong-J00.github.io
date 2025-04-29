@@ -879,11 +879,11 @@ h1 {
 .inner-container {
   width: 630px;
   margin: 0 auto;
+
+  padding-bottom: 8px;
   box-sizing: border-box;
-  min-height: 200px;
   /* min-height: 300px; */
 }
-
 .inner-accordion {
   font-family: "Gyeonggi_Title_Medium";
   background-color: #f0f4ff;
