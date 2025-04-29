@@ -211,12 +211,16 @@ const tabContents = document.querySelectorAll(".tab-content");
 
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    tabButtons.forEach((btn) => btn.classList.remove("active"));
-    tabContents.forEach((content) => content.classList.remove("active"));
+    const tabGroup = button.closest(".tab-container"); // 탭 컨테이너 찾기
+    const buttonsInGroup = tabGroup.querySelectorAll(".tab-button");
+    const contentsInGroup = tabGroup.querySelectorAll(".tab-content");
+
+    buttonsInGroup.forEach((btn) => btn.classList.remove("active"));
+    contentsInGroup.forEach((content) => content.classList.remove("active"));
+
     button.classList.add("active");
-    document
-      .getElementById(button.getAttribute("data-tab"))
-      .classList.add("active");
+    const targetTab = button.getAttribute("data-tab");
+    tabGroup.querySelector(`#${targetTab}`).classList.add("active");
   });
 });
 
@@ -294,6 +298,16 @@ closeProblemModalButtons.forEach((closeBtn) => {
 
 // 바깥 클릭 시 문제 모달 닫기
 window.addEventListener("click", (e) => {
+  document.querySelectorAll(".modal").forEach((modal) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+
+      // 👉 특정 모달 닫히면 experienceModal 다시 열기
+      if (modal.id === "microModal" || modal.id === "oledModal") {
+        openModal("experienceModal");
+      }
+    }
+  });
   const modals = document.querySelectorAll(".problem-modal");
   modals.forEach((modal) => {
     if (e.target === modal) {

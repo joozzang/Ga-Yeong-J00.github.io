@@ -18,8 +18,7 @@
         <a role="button" onclick="openModal('profileModal')">Profile</a>
         <a role="button" onclick="openModal('experienceModal')">Experience</a>
         <a role="button" onclick="openModal('projectsModal')">Project</a>
-        <a role="button" onclick="openModal('contactModal')">Contact</a>
-      </nav>
+        </nav>
     </div>
 
     <div id="profileModal" class="modal">
@@ -66,24 +65,30 @@
               <li>ITQ 한글엑셀 A등급</li>
               <li>ITQ 한글파워포인트 A등급</li>
             </ul>
-            <div class="social-icons">
+            <div class="social-icons"><a href="mailto:jooooooky415@gmail.com">
+              <img
+                width="50"
+                height="50"
+                src="images/mail.png"
+                alt="email"
+            /></a>
               <a
                 href="https://www.notion.so/Gayeong-s-Portfolio-5c6554701126473bbaa9787b083066fd"
                 target="_blank"
               >
                 <img
-                  width="50"
-                  height="50"
+                  width="48"
+                  height="48"
                   src="images/notion.png"
                   alt="notion--v1"
               /></a>
               <a href="https://github.com/joozzang/J00" target="_blank">
                 <img
-                  width="45"
-                  height="45"
+                  width="43"
+                  height="43"
                   src="images/github.png"
                   alt="github"
-              /></a>
+              /></a> 
             </div>
           </div>
         </div>
@@ -141,13 +146,7 @@
 
     <div id="microModal" class="modal">
       <div class="modal-content micro">
-        <button
-          class="back-button"
-          onclick="closeModal('microModal');openModal('experienceModal')"
-        >
-          ◀︎
-        </button>
-        <div class="close" onclick="closeModal('microModal')">&times;</div>
+        <div class="close" onclick="closeModal('microModal'); openModal('experienceModal')">&times;</div>
 
         <h1>Micro LED 개발</h1>
 
@@ -278,13 +277,7 @@
 
     <div id="oledModal" class="modal">
       <div class="modal-content oled">
-        <button
-          class="back-button"
-          onclick="closeModal('oledModal');openModal('experienceModal')"
-        >
-          ◀︎
-        </button>
-        <div class="close" onclick="closeModal('oledModal')">&times;</div>
+        <div class="close" onclick="closeModal('oledModal'); openModal('experienceModal')">&times;</div>
         <h1>OLED 잔상 보상</h1>
 
         <ul class="accordion-list">
@@ -441,18 +434,9 @@
         <h1>도르멍탐라</h1>
       </div>
     </div>
-
-    <div id="proj2DetailModal" class="modal">
-      <div class="modal-content">
-        <div class="close" onclick="closeModal('proj2DetailModal')">
-          &times;
-        </div>
-        <h1>LawBot</h1>
-        <p>LawBot 프로젝트에 대한 상세 설명입니다.</p>
-      </div>
-    </div>
-
  
+
+
     <div id="proj3DetailModal" class="modal">
       <div class="modal-content drawry">
         <div class="close" onclick="closeModal('proj3DetailModal')">
@@ -735,7 +719,6 @@
                   </div>
                   <div id="tab-backend" class="tab-content">
                     <ul>
-                      <li>Python – 전반적인 로직 및 서버 구축</li>
                       <li>FastAPI – 웹 통합 및 사용자 요청 처리 API</li>
                       <li>Flask – ControlNet 서버 구축</li>
                       <li>SQLite – 사용자 데이터 및 동화 이미지 저장 DB 사용</li>
@@ -804,9 +787,8 @@
                 <div class="inner-container">
                     <button class="open-problem-modal" data-target="problem-modal1">🎯 이미지 생성 정확도 향상</button>
                     <button class="open-problem-modal" data-target="problem-modal2">🔐 HTTPS 인증서 발급 실패</button>
-                    <button class="open-problem-modal" data-target="problem-modal3">⚙️ Azure VM 환경 구축 실패</button>
-                    <button class="open-problem-modal" data-target="problem-modal4">🌐 CORS & Mixed Content 오류</button>
-                    <button class="open-problem-modal" data-target="problem-modal5">🔒 디렉토리 탐색 공격 대응</button>
+                    <button class="open-problem-modal" data-target="problem-modal3">🌐 CORS & Mixed Content 오류</button>
+                    <button class="open-problem-modal" data-target="problem-modal4">🔒 디렉토리 탐색 공격 대응</button>
                   </div>
                   
             </div>
@@ -829,21 +811,24 @@
         </div>
       </div>
     </div>
-   <!-- 모달 1 -->
+
    <div id="problem-modal1" class="problem-modal">
     <div class="problem-modal-content">
       <span class="problem-modal-close">&times;</span>
-      <h2>🎯 이미지 생성 정확도 향상</h2>
+      <h2>🎯 이미지 생성 결과 품질 향상</h2>
       <div class="problem-solving-row">
         <div class="label">문제</div>
-        <div class="content">Stable Diffusion + ControlNet 기반 이미지 생성 정확도 저하</div>
+        <div class="content">
+          사용자 스케치 기반 ControlNet 이미지 생성 결과 품질 ↓ <br>
+          팀 전체가 다양한 실험을 반복했지만 비효율적인 흐름 지속</div>
       </div>
       <div class="problem-solving-row">
         <div class="label">기여</div>
         <div class="content">
           <ul>
-            <li>PM으로서 우선순위 재조정 및 실험 방향 리딩</li>
-            <li>프롬프트 튜닝, 파라미터 조정 주도</li>
+            <li>PM으로서 우선순위 재조정 및 일정 조율</li>
+            <li>프롬프트 튜닝, 파라미터 수정 등 실험 방향 리딩</li>
+            <li>실험 결과 공유 및 개선안 도출</li>
           </ul>
         </div>
       </div>
@@ -861,86 +846,77 @@
       <h2>🔐 HTTPS 인증서 발급 실패</h2>
       <div class="problem-solving-row">
         <div class="label">문제</div>
-        <div class="content">Let’s Encrypt 인증 실패 및 ACME 프로토콜 충돌</div>
+        <div class="content">
+          Let’s Encrypt 인증 실패 및 ACME 프로토콜 충돌<br>
+          HTTPS 설정 반복 실패</div>
       </div>
       <div class="problem-solving-row">
         <div class="label">기여</div>
         <div class="content">
           <ul>
-            <li>수동 인증서 발급 및 설정 적용</li>
-            <li>멘토링 요청을 통한 구조 개선</li>
+            <li>수동 인증서 발급 및 Nginx 설정 등 다양한 대안 실험</li>
+            <li>자료 조사와 실험을 통한 개선 방향 모색</li>
+            <li>개발자 지원과 협업을 통한 문제 해결 </li>
           </ul>
         </div>
       </div>
       <div class="problem-solving-row">
         <div class="label">성과</div>
-        <div class="content">HTTPS 통신 안정화 완료</div>
+        <div class="content">
+          보안 인증서 적용 완료 → 전체 서비스 HTTPS 통신 안정화</div>
       </div>
     </div>
   </div>
-  
-  <!-- 모달 3 -->
   <div id="problem-modal3" class="problem-modal">
     <div class="problem-modal-content">
       <span class="problem-modal-close">&times;</span>
-      <h2>⚙️ Azure VM 환경 구축 실패</h2>
+      <h2>🌐 CORS & Mixed Content 오류</h2>
+  
       <div class="problem-solving-row">
         <div class="label">문제</div>
-        <div class="content">GPU 할당 오류 및 권한 설정 이슈로 모델 배포 실패</div>
-      </div>
+        <div class="content">
+          HTTP/HTTPS 혼합 콘텐츠 및 CORS 정책 위반으로 브라우저 통신 차단 발생
+        </div> <!-- 🔵 이 </div> 닫아야 했음 -->
+      </div> <!-- 🔵 문제 row 닫기 -->
+  
       <div class="problem-solving-row">
-        <div class="label">기여</div>
+        <div class="label help">기여</div>
         <div class="content">
           <ul>
-            <li>리소스 최적화 및 로그 기반 원인 분석</li>
+            <li>서버와 클라이언트 간 요청 구조를 재정비</li>
+            <li>HTTPS 일원화 및 CORS 정책 재설정 주도</li>
+            <li>전체 테스트를 통해 이슈 정리 및 해결 기여</li>
           </ul>
         </div>
       </div>
+  
       <div class="problem-solving-row">
         <div class="label">성과</div>
-        <div class="content">모델 배포 및 테스트 환경 안정적 구축</div>
+        <div class="content">
+          클라이언트–서버 통신 오류 해결 → 웹 서비스 정상화
+        </div>
       </div>
+  
     </div>
   </div>
   
-  <!-- 모달 4 -->
-  <div id="problem-modal4" class="problem-modal">
-    <div class="problem-modal-content">
-      <span class="problem-modal-close">&times;</span>
-      <h2>🌐 CORS & Mixed Content 오류</h2>
-      <div class="problem-solving-row">
-        <div class="label">문제</div>
-        <div class="content">HTTP/HTTPS 혼합 콘텐츠 및 CORS 정책 위반</div>
-      </div>
-      <div class="problem-solving-row">
-        <div class="label">기여</div>
-        <div class="content">
-          <ul>
-            <li>요청 구조 재정비 및 정책 재설정</li>
-          </ul>
-        </div>
-      </div>
-      <div class="problem-solving-row">
-        <div class="label">성과</div>
-        <div class="content">웹 통신 오류 해결 및 서비스 정상화</div>
-      </div>
-    </div>
-  </div>
   
   <!-- 모달 5 -->
-  <div id="problem-modal5" class="problem-modal">
+  <div id="problem-modal4" class="problem-modal">
     <div class="problem-modal-content">
       <span class="problem-modal-close">&times;</span>
       <h2>🔒 디렉토리 탐색 공격 대응</h2>
       <div class="problem-solving-row">
         <div class="label">문제</div>
-        <div class="content">서버 디렉토리 노출 및 외부 스캐너 공격</div>
+        <div class="content">
+          외부 스캐너로 인한 서버 디렉토리 노출 및 보안 취약점 발생</div>
       </div>
       <div class="problem-solving-row">
         <div class="label">기여</div>
         <div class="content">
           <ul>
-            <li>보안 헤더 및 접근 제한 설정 적용</li>
+            <li>보안 헤더 강화 및 접근 제한 설정 도입 제안</li>
+            <li>개발자와 함께 대응책 검토 및 적용 진행</li>
           </ul>
         </div>
       </div>
@@ -951,15 +927,6 @@
     </div>
   </div>
 
-    <div id="contactModal" class="modal">
-      <div class="modal-content contact">
-        <div class="close" onclick="closeModal('contactModal')">&times;</div>
-        <h1>Contact</h1>
-        <div class="call">
-          <h4>📧 jooooooky415@gmail.com</h4>
-        </div>
-      </div>
-    </div>
     <script src="script.js"></script>
   </body>
 </html>
