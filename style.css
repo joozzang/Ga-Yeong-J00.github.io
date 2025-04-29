@@ -145,7 +145,7 @@ nav {
 nav a {
   color: #0064ff;
   background-color: #edfaff;
-  padding: 25px;
+  padding: 25px 50px;
   font-size: 1.8em;
   border-radius: 15px;
   width: 200px;
@@ -211,10 +211,6 @@ nav a:hover {
 /* ------------------ Profile ------------------ */
 .profile {
   max-width: 1000px;
-}
-
-.contact {
-  max-width: 500px;
 }
 
 .profile-body {
@@ -590,21 +586,8 @@ h1 {
   transform: translateX(-50%) scale(1.1);
 }
 
-/* ------------------ Back Button ------------------ */
-.back-button {
-  position: absolute;
-  top: 50%;
-  left: -100px;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  font-size: 5em;
-  color: rgb(255, 255, 183) !important;
-  cursor: pointer;
-  font-family: "Gyeonggi_Title_Medium";
-}
-.back-button:hover {
-  color: #609bf5 !important;
+.accordion-item h3 {
+  color: #3683f5;
 }
 
 /* ------------------ Social Icons ------------------ */
@@ -879,12 +862,16 @@ h1 {
 .inner-container {
   width: 630px;
   margin: 0 auto;
-
   padding-bottom: 8px;
   box-sizing: border-box;
-  /* min-height: 300px; */
 }
-/* 새로운 문제해결 모달 스타일 (기존 modal 안겹치게) */
+#page3 .panel {
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #609bf5 transparent;
+  position: relative;
+}
 .problem-modal {
   position: fixed;
   top: 0;
@@ -912,7 +899,7 @@ h1 {
   padding: 15px 35px;
   border-radius: 15px;
   width: 90%;
-  max-width: 800px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
@@ -932,18 +919,12 @@ h1 {
 .problem-modal-close:hover {
   color: #0064ff;
 }
-
-/* 제목 스타일 */
-.problem-modal-title {
-  background-color: #3683f5;
-  color: rgb(255, 255, 183) !important;
-  padding: 10px 15px;
-  border-radius: 10px;
-  font-size: 1.8em;
-  text-align: center;
-  margin-bottom: 20px;
+.problem-modal-content h2 {
+  color: #0064ff;
+  font-size: 1.5em;
+  padding: 0;
+  margin: 10px 0;
 }
-
 /* 내용은 기존 거 사용 */
 .problem-solving-row {
   display: flex;
@@ -952,16 +933,21 @@ h1 {
 }
 
 .problem-solving-row .label {
+  margin-top: 15px;
   min-width: 70px;
-  font-size: 1.2em;
-  color: #3b5fe0;
+  font-size: 1.5em;
+  color: #609bf5;
 }
-
+.problem-solving-row .label.help {
+  margin-top: 10px;
+}
 .problem-solving-row .content {
   flex: 1;
   text-align: left;
   font-family: "GyeonggiTitleLight";
-  font-size: 1.2em;
+  font-size: 1.3em;
+  margin-top: 5px;
+  line-height: 2;
 }
 
 .problem-solving-row .content ul {
@@ -975,4 +961,27 @@ h1 {
   margin: 0;
   padding: 0;
   font-size: 1em;
+}
+.open-problem-modal {
+  background-color: #f0f4ff;
+  border: 1px solid #d0d7e2;
+  border-radius: 10px;
+  padding: 15px 20px;
+  width: 100%;
+  text-align: left;
+  font-size: 1.2em;
+  font-family: "Gyeonggi_Title_Medium";
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.open-problem-modal:hover,
+.open-problem-modal.active {
+  background-color: #3683f5;
+  color: #ffffff;
 }
