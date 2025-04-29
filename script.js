@@ -4,7 +4,6 @@ let index = 0;
 
 function typeText() {
   const nameElement = document.getElementById("typing-text");
-
   if (index < text.length) {
     nameElement.textContent += text[index++];
     setTimeout(typeText, 150);
@@ -31,7 +30,6 @@ function closeModal(id) {
   if (modal) modal.classList.remove("show");
 }
 
-// ESC 키로 모달 닫기
 window.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     document.querySelectorAll(".modal").forEach((modal) => {
@@ -40,7 +38,6 @@ window.addEventListener("keydown", (event) => {
   }
 });
 
-// 바깥 클릭하면 모달 닫기
 document.querySelectorAll(".modal").forEach((modal) => {
   modal.addEventListener("click", (event) => {
     if (event.target === modal) {
@@ -57,7 +54,6 @@ toggleBtn.addEventListener("click", () => {
 
 /* ------------------ Accordion ------------------ */
 const accordions = document.querySelectorAll(".accordion");
-
 accordions.forEach((acc) => {
   acc.addEventListener("click", function () {
     this.classList.toggle("active");
@@ -85,58 +81,44 @@ const descriptions = [
   "✏️ 난독증 아동을 위한 <br>AI 동화책 생성<br>학습 플랫폼",
 ];
 
-// 카드 클릭 이벤트
 projectCards.forEach((card, index) => {
   card.addEventListener("click", () => {
-    if (selectedProjectIndex === index) {
-      // 이미 선택된 카드를 다시 클릭한 경우
-      selectedProjectIndex = -1;
-    } else {
-      // 다른 카드를 클릭한 경우
-      selectedProjectIndex = index;
-    }
+    selectedProjectIndex = selectedProjectIndex === index ? -1 : index;
     updateCardStates();
   });
 });
+
 function updateCardStates() {
   projectCards.forEach((card, index) => {
     const descDiv = card.querySelector(".project-description-inline");
-
     if (index === selectedProjectIndex) {
       card.classList.add("active");
       card.style.opacity = "1";
       descDiv.innerHTML = descriptions[index].replace(/\n/g, "<br>");
     } else {
       card.classList.remove("active");
-      card.style.opacity = "1"; // 다시 모두 선명하게!
+      card.style.opacity = "1";
       descDiv.innerHTML = "";
     }
   });
-
-  if (selectedProjectIndex === -1) {
-    instructionText.style.display = "block"; // 선택 해제됐으면 안내문구 다시 보여줌
-    detailBtn.style.display = "none"; // 버튼 숨김
-  } else {
-    instructionText.style.display = "none";
-    detailBtn.style.display = "block";
-  }
+  instructionText.style.display =
+    selectedProjectIndex === -1 ? "block" : "none";
+  detailBtn.style.display = selectedProjectIndex === -1 ? "none" : "block";
 }
 
-// 자세히 보기 버튼 클릭 시
 detailBtn.addEventListener("click", () => {
   if (selectedProjectIndex === -1) return;
-
   const projectIds = [
     "proj1DetailModal",
     "proj2DetailModal",
     "proj3DetailModal",
   ];
   const targetModalId = projectIds[selectedProjectIndex];
-
   closeModal("projectsModal");
   openModal(targetModalId);
 });
 
+/* ------------------ Slide Navigation ------------------ */
 const slides = document.querySelectorAll(".slide");
 const nextButton = document.getElementById("nextButton");
 const prevButton = document.getElementById("prevButton");
@@ -169,9 +151,9 @@ prevButton.addEventListener("click", () => {
   }
 });
 
-// 초기 슬라이드 보이기
 showSlide(currentSlide);
 
+/* ------------------ Image Slider ------------------ */
 const imageSlides = document.querySelectorAll(".image-slide");
 const prevImageBtn = document.getElementById("prevImageBtn");
 const nextImageBtn = document.getElementById("nextImageBtn");
@@ -199,15 +181,14 @@ function stopAutoSlide() {
   clearInterval(autoSlideInterval);
 }
 
-// 시작/중지 토글
 toggleSlideBtn.addEventListener("click", () => {
   if (autoSlideInterval) {
     stopAutoSlide();
-    toggleSlideBtn.textContent = "▶️"; // 시작 버튼으로 바꿈
+    toggleSlideBtn.textContent = "▶️";
     autoSlideInterval = null;
   } else {
     startAutoSlide();
-    toggleSlideBtn.textContent = "⏸️"; // 중지 버튼으로 바꿈
+    toggleSlideBtn.textContent = "⏸️";
   }
 });
 
@@ -221,10 +202,10 @@ prevImageBtn.addEventListener("click", () => {
   showImageSlide(currentImage);
 });
 
-// 시작할 때 초기화
 showImageSlide(currentImage);
 startAutoSlide();
 
+/* ------------------ Tab Section ------------------ */
 const tabButtons = document.querySelectorAll(".tab-button");
 const tabContents = document.querySelectorAll(".tab-content");
 
@@ -232,10 +213,43 @@ tabButtons.forEach((button) => {
   button.addEventListener("click", () => {
     tabButtons.forEach((btn) => btn.classList.remove("active"));
     tabContents.forEach((content) => content.classList.remove("active"));
-
     button.classList.add("active");
     document
       .getElementById(button.getAttribute("data-tab"))
       .classList.add("active");
+  });
+});
+
+/* ------------------ Inner Accordion ------------------ */
+const innerAccordions = document.querySelectorAll(".inner-accordion");
+innerAccordions.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    this.classList.toggle("active");
+    const panel = this.nextElementSibling;
+    panel.style.display = panel.style.display === "block" ? "none" : "block";
+  });
+});
+
+/* ------------------ Scroll Spacer Toggle ------------------ */
+const accordionButtons = document.querySelectorAll(
+  ".accordion, .inner-accordion"
+);
+
+accordionButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    setTimeout(() => {
+      const anyOpen = document.querySelector(
+        ".panel.open, .inner-panel[style*='block']"
+      );
+      const currentSlide = btn.closest(".slide");
+      const spacer = currentSlide?.querySelector(".scroll-spacer");
+      if (anyOpen && spacer) {
+        spacer.style.display = "block";
+        currentSlide.classList.add("scroll-expanded");
+      } else if (spacer) {
+        spacer.style.display = "none";
+        currentSlide.classList.remove("scroll-expanded");
+      }
+    }, 300);
   });
 });
