@@ -425,15 +425,171 @@
         <button class="detail-btn" id="project-detail-btn">자세히 보기</button>
       </div>
     </div>
-
     <div id="proj1DetailModal" class="modal">
-      <div class="modal-content">
-        <div class="close" onclick="closeModal('proj1DetailModal')">
-          &times;
-        </div>
+      <div class="modal-content jeju">
+        <div class="close" onclick="closeModal('proj1DetailModal')">&times;</div>
         <h1>도르멍탐라</h1>
+    
+        <div class="slider">
+          <!-- Page 1: Project Overview -->
+          <div class="slide" id="jejuPage1">
+              <div class="slider-section">
+                <div class="image-slider">
+                  <span id="jejupageImageNumber">1/N</span>
+                  <div class="image-slide active">
+                    <img src="images/jeju/jeju_1.jpg" alt="서비스 소개 화면" />
+                    <h3>서비스 소개 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_2.jpg" alt="서비스 설명 화면" />
+                    <h3>서비스 설명 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_3.jpg" alt="로그인 화면" />
+                    <h3>로그인 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_4.jpg" alt="사용자 성별 입력 화면" />
+                    <h3>사용자 성별 입력 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_5.jpg" alt="사용자 나이 입력 화면" />
+                    <h3>사용자 나이 입력 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_6.jpg" alt="사용자 동행인 입력 화면" />
+                    <h3>사용자 동행인 입력 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_7.jpg" alt="사용자 여행지 입력 화면" />
+                    <h3>사용자 여행지 입력 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_8.jpg" alt="사용자 여행 기간 입력 화면" />
+                    <h3>사용자 여행 기간 입력 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_9.jpg" alt="사용자 여행 계절 입력 화면" />
+                    <h3>사용자 여행 계절 입력 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_10.jpg" alt="사용자 키워드 입력 화면" />
+                    <h3>사용자 성키워드입력 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_11.jpg" alt="여행지 생성 화면" />
+                    <h3>여행지 생성 화면</h3>
+                  </div><div class="image-slide active">
+                    <img src="images/jeju/jeju_12.jpg" alt="여행지 추천 결과 화면" />
+                    <h3>여행지 추천 결과 화면</h3>
+                  </div>
+                  <div class="image-slider-controls">
+                    <button id="jejuprevImageBtn">◀</button>
+                    <button id="jejutoggleSlideBtn">⏸</button>
+                    <button id="jejunextImageBtn">▶</button>
+                  </div>
+                </div>
+              </div>
+            <div class="accordion-item">
+              <button class="accordion">
+                <span>✏️ Project Overview</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+              </button>
+              <div class="panel">
+                <p>사용자의 성향과 관심 데이터를 기반으로 맞춤형 제주 여행 코스를 추천하는 AI 기반 여행 추천 플랫폼입니다.<br><br>
+                  사용자의 나이, 여행 성향 등 다양한 정보를 입력받아 맞춤 여행지를 제안하며, 추천 결과는 카카오 지도를 활용해 시각적으로 확인할 수 있도록 구성했습니다.<br><br>
+                  직관적이고 아기자기한 감성의 UI와 맞춤형 콘텐츠 설계로 누구나 쉽게 재미있게 사용할 수 있는 서비스를 지향했습니다.</p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Page 2: Tech Stack & Role -->
+          <div class="slide" id="jejuPage2">
+            <div class="accordion-item">
+              <button class="accordion">
+                <span>☁️ Tech Stack</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+              </button>
+              <div class="panel">
+                <div class="tab-container">
+                  <div class="tab-buttons tech">
+                    <button class="tab-button active" data-tab="jejuTab-data">📁 Data & ML</button>
+                    <button class="tab-button" data-tab="jejuTab-tools">🛠 Tools</button>
+                    <button class="tab-button" data-tab="jejuTab-frontend">🌐 Frontend</button>
+                    <button class="tab-button" data-tab="jejuTab-backend">💻 Backend</button>
+                  </div>
+                  <div class="tab-contents tech">
+                    <div id="jejuTab-data" class="tab-content active">
+                      <ul>
+                        <li>Python, pandas, scikit-learn – 사용자 데이터 분석 및 추천 알고리즘</li>
+                        <li>TensorFlow – 사용자 행동 예측 실험</li>
+                        <li>matplotlib, seaborn – 데이터 시각화</li>
+                      </ul>
+                    </div>
+                    <div id="jejuTab-tools" class="tab-content">
+                      <ul>
+                        <li>GitHub – 버전 관리 및 코드 협업</li>
+                        <li>Notion – 프로젝트 문서화 및 협업 프로세스 관리</li>
+                        <li>Canva – 발표 자료 제작</li>
+                      </ul>
+                    </div>
+                    <div id="jejuTab-frontend" class="tab-content">
+                      <ul>
+                        <li>HTML / CSS / JavaScript – 사용자 인터페이스 구현</li>
+                        <li>React – 반응형 UI 설계 및 기능 구현</li>
+                        <li>Kakao Map API – 위치 기반 추천 시각화</li>
+                      </ul>
+                    </div>
+                    <div id="jejuTab-backend" class="tab-content">
+                      <ul>
+                        <li>Flask – 추천 결과 API 연동</li>
+                        <li>Spring Boot – 전체 서비스 아키텍처 관리</li>
+                        <li>Azure MySQL – 사용자 및 여행지 데이터 저장</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="accordion-item">
+              <button class="accordion">
+                <span>👩‍💻 Role & Contributions</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+              </button>
+              <div class="panel">
+                <ul>
+                  <li>웹 UI/UX 디자인 – 사용자 친화적 인터페이스 및 전체 사용자 플로우 설계</li>
+                  <li>프레젠테이션 리드 – 발표 스토리보드, 디자인 자료, 시연 흐름 기획 및 제작</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Page 3: Key Experiences -->
+          <div class="slide" id="jejuPage3">
+            <div class="accordion-item">
+              <button class="accordion">
+                <span>🧠 Key Experience</span>
+                <svg class="accordion-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"></path></svg>
+              </button>
+              <div class="panel inner-container">
+    <strong>🎨  여행 감성 가득한 UI/UX, 직접 드로잉 제작</strong>
+                <p>
+                  여행의 감성을 살리기 위해, UI에 사용되는 아이콘과 배경 등을 직접 손으로 그려 제작했습니다.<br>
+                  저작권 이슈를 피하면서도 브랜드 무드에 어울리는 감각적인 시각 요소를 구현했고,<br>
+                  “귀엽고 감각 있다”는 피드백을 팀 내외부에서 받을 정도로 디자인 자체로 긍정적인 인상을 남겼습니다.
+                </p>
+    
+                <hr>
+                <strong>🪄 사용자 맞춤 입력 화면 디자인 및 구현</strong>
+                <p>
+                  사용자가 여행 성향을 입력하는 로그인 후 메인 입력 화면을 중심으로,<br>
+                  나이, 성별, 여행 스타일 등 약 7가지 항목을 수집하는 폼 UI를 기획, 디자인, 구현까지 전담했습니다.<br>
+                  추천 여정의 첫 관문인 만큼, 입력 과정이 귀엽고 부드럽게 이어지도록<br>
+                  컬러와 애니메이션을 활용해 완성도 높은 사용자 경험을 설계했습니다.
+                </p>
+    
+              </div>
+            </div>
+          </div>
+    
+          <button class="arrow-button" id="jejuPrevButton">◀︎</button>
+          <button class="arrow-button" id="jejuNextButton">▶︎</button>
+        </div>
       </div>
     </div>
+    
  
 
     <div id="proj2DetailModal" class="modal">
@@ -496,10 +652,10 @@
               <div class="panel">
                 <div class="tab-container">
                   <div class="tab-buttons tech">
-                    <button class="tab-button active" data-tab="tab-ai">📁 AI & ML</button>
-                    <button class="tab-button" data-tab="tab-tools">🛠 Tools</button>
-                    <button class="tab-button" data-tab="tab-frontend">🛠 Frontend</button>
-                    <button class="tab-button" data-tab="tab-backend">🛠 Backend</button>
+                    <button class="tab-button active" data-tab="lawtab-ai">📁 AI & ML</button>
+                    <button class="tab-button" data-tab="lawtab-tools">🛠 Tools</button>
+                    <button class="tab-button" data-tab="lawtab-frontend">🛠 Frontend</button>
+                    <button class="tab-button" data-tab="lawtab-backend">🛠 Backend</button>
                   </div>
                   <div class="tab-contents tech">
                     <div id="lawtab-ai" class="tab-content active">
@@ -551,35 +707,6 @@
               </div>
             </div>
           </div>
-    
-          <div class="slide" id="lawpage3">
-            <div class="accordion-item problem-solving">
-              <button class="accordion">
-                <span>🛠️ Problem-Solving Experience</span>
-                <svg class="accordion-icon" viewBox="0 0 24 24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </button>
-              <div class="panel">
-                <div class="inner-container">
-                  <button class="open-problem-modal" data-target="problem-modalX1">🎯 문제1</button>
-                  <button class="open-problem-modal" data-target="problem-modalX2">🔐 문제2</button>
-                </div>
-              </div>
-            </div>
-    
-            <div class="accordion-item problem-solving">
-              <button class="accordion">
-                <span>🌱 Growth</span>
-                <svg class="accordion-icon" viewBox="0 0 24 24">
-                  <path d="M6 9l6 6 6-6"></path>
-                </svg>
-              </button>
-              <div class="panel inner-container">
-              </div>
-            </div>
-          </div>
-    
           <button class="arrow-button" id="lawprevButton">◀︎</button>
           <button class="arrow-button" id="lawnextButton">▶︎</button>
         </div>
@@ -841,8 +968,8 @@
                 <div class="tab-buttons tech">
                   <button class="tab-button active" data-tab="tab-ai">📁 AI & ML</button>
                   <button class="tab-button" data-tab="tab-tools">🛠 Tools</button>
-                  <button class="tab-button" data-tab="tab-frontend">🛠 Frontend</button>
-                  <button class="tab-button" data-tab="tab-backend">🛠 Backend</button>
+                  <button class="tab-button" data-tab="tab-frontend">🎨 Frontend</button>
+                  <button class="tab-button" data-tab="tab-backend">⚙️ Backend</button>
                 </div>
                 <div class="tab-contents tech">
                   <div id="tab-ai" class="tab-content active">

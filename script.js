@@ -118,12 +118,12 @@ detailBtn.addEventListener("click", () => {
   openModal(targetModalId);
 });
 
-/* ------------------ Slide Navigation ------------------ */
-function setupSlideNavigation(modalId, prevBtnId, nextBtnId) {
+/* ------------------ Slide Navigation (Multi Modal) ------------------ */
+function setupSlideNavigation(modalId, prevId, nextId, slideClass) {
   const modal = document.getElementById(modalId);
-  const slides = modal.querySelectorAll(".slide");
-  const nextButton = modal.querySelector(`#${nextBtnId}`);
-  const prevButton = modal.querySelector(`#${prevBtnId}`);
+  const slides = modal.querySelectorAll(slideClass);
+  const nextButton = modal.querySelector(`#${nextId}`);
+  const prevButton = modal.querySelector(`#${prevId}`);
   let currentSlide = 0;
 
   function updateButtons() {
@@ -158,17 +158,29 @@ function setupSlideNavigation(modalId, prevBtnId, nextBtnId) {
 
   showSlide(currentSlide);
 }
-setupSlideNavigation("proj2DetailModal", "lawprevButton", "lawnextButton"); // Lawbot
-setupSlideNavigation("proj3DetailModal", "prevButton", "nextButton"); // Drawry
 
-/* ------------------ Image Slider ------------------ */
-function setupImageSlider(modalId) {
+setupSlideNavigation(
+  "proj1DetailModal",
+  "jejuprevButton",
+  "jejunextButton",
+  ".slide"
+);
+setupSlideNavigation(
+  "proj2DetailModal",
+  "lawprevButton",
+  "lawnextButton",
+  ".slide"
+);
+setupSlideNavigation("proj3DetailModal", "prevButton", "nextButton", ".slide");
+
+/* ------------------ Image Sliders ------------------ */
+function setupImageSlider(modalId, imagePrefix) {
   const modal = document.getElementById(modalId);
   const imageSlides = modal.querySelectorAll(".image-slide");
-  const prevImageBtn = modal.querySelector("#prevImageBtn");
-  const nextImageBtn = modal.querySelector("#nextImageBtn");
-  const pageImageNumber = modal.querySelector("#pageImageNumber");
-  const toggleSlideBtn = modal.querySelector("#toggleSlideBtn");
+  const prevImageBtn = modal.querySelector(`#${imagePrefix}prevImageBtn`);
+  const nextImageBtn = modal.querySelector(`#${imagePrefix}nextImageBtn`);
+  const pageImageNumber = modal.querySelector(`#${imagePrefix}pageImageNumber`);
+  const toggleSlideBtn = modal.querySelector(`#${imagePrefix}toggleSlideBtn`);
 
   let currentImage = 0;
   let autoSlideInterval;
@@ -224,8 +236,10 @@ function setupImageSlider(modalId) {
   startAutoSlide();
 }
 
-setupImageSlider("proj2DetailModal");
-setupImageSlider("proj3DetailModal");
+setupImageSlider("proj1DetailModal", "jeju");
+setupImageSlider("proj2DetailModal", "law");
+setupImageSlider("proj3DetailModal", "");
+
 /* ------------------ Tab Section ------------------ */
 const tabButtons = document.querySelectorAll(".tab-button");
 const tabContents = document.querySelectorAll(".tab-content");
