@@ -253,3 +253,55 @@ accordionButtons.forEach((btn) => {
     }, 300);
   });
 });
+const openProblemModalButtons = document.querySelectorAll(
+  ".open-problem-modal"
+);
+const closeProblemModalButtons = document.querySelectorAll(
+  ".problem-modal-close"
+);
+const projectModal = document.getElementById("proj3DetailModal"); // drawry 모달
+
+// 문제 모달 열기
+openProblemModalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const target = button.getAttribute("data-target");
+    const modal = document.getElementById(target);
+
+    if (projectModal) {
+      projectModal.classList.remove("show"); // 👉 drawry 모달 숨기기
+    }
+
+    if (modal) {
+      modal.classList.add("show"); // 👉 problem-modal 열기
+    }
+  });
+});
+
+// 문제 모달 닫기
+closeProblemModalButtons.forEach((closeBtn) => {
+  closeBtn.addEventListener("click", () => {
+    const modal = closeBtn.closest(".problem-modal");
+
+    if (modal) {
+      modal.classList.remove("show"); // 👉 problem-modal 닫기
+    }
+
+    if (projectModal) {
+      projectModal.classList.add("show"); // 👉 drawry 모달 다시 열기
+    }
+  });
+});
+
+// 바깥 클릭 시 문제 모달 닫기
+window.addEventListener("click", (e) => {
+  const modals = document.querySelectorAll(".problem-modal");
+  modals.forEach((modal) => {
+    if (e.target === modal) {
+      modal.classList.remove("show"); // problem-modal 닫기
+
+      if (projectModal) {
+        projectModal.classList.add("show"); // drawry 다시 열기
+      }
+    }
+  });
+});

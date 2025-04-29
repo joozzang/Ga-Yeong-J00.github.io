@@ -884,64 +884,67 @@ h1 {
   box-sizing: border-box;
   /* min-height: 300px; */
 }
-.inner-accordion {
-  font-family: "Gyeonggi_Title_Medium";
-  background-color: #f0f4ff;
-  border: 1px solid #d0d7e2;
+/* 새로운 문제해결 모달 스타일 (기존 modal 안겹치게) */
+.problem-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  font-size: 1.1em;
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 10px 15px;
-  margin-top: 10px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  background: rgba(76, 111, 121, 0.6);
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  transition: background-color 0.3s, transform 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  z-index: 1000; /* 다른 모달 위로 */
 }
 
-.inner-accordion:hover,
-.inner-accordion.active {
+.problem-modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.problem-modal-content {
+  background: linear-gradient(#ffffff, #a1dbff);
+  position: relative;
+  padding: 15px 35px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.problem-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  font-size: 2em;
+  color: #555;
+  cursor: pointer;
+}
+.problem-modal-close:hover {
+  color: #0064ff;
+}
+
+/* 제목 스타일 */
+.problem-modal-title {
   background-color: #3683f5;
-  color: white;
-  justify-content: space-between;
-}
-
-.inner-accordion span {
-  display: inline-block;
-  transition: all 0.4s ease;
-  color: inherit;
+  color: rgb(255, 255, 183) !important;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-size: 1.8em;
   text-align: center;
-  width: 100%;
+  margin-bottom: 20px;
 }
 
-.inner-accordion.active span {
-  text-align: left;
-  width: auto;
-}
-.inner-accordion-icon {
-  width: 24px;
-  height: 24px;
-  fill: #609bf5;
-  transition: transform 0.4s ease;
-  flex-shrink: 0;
-}
-
-.inner-accordion.active .inner-accordion-icon {
-  transform: rotate(180deg);
-  fill: #fff;
-}
-
-.inner-panel {
-  display: none;
-  padding: 0;
-  background-color: #ffffff;
-  margin: 0;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
+/* 내용은 기존 거 사용 */
 .problem-solving-row {
   display: flex;
   padding: 10px;
@@ -972,21 +975,4 @@ h1 {
   margin: 0;
   padding: 0;
   font-size: 1em;
-}
-.problem-solving .panel .inner-panel {
-  max-height: 80vh;
-  overflow-y: auto;
-  padding: 10px 0;
-  box-sizing: border-box;
-}
-
-.problem-solving .panel .inner-panel::-webkit-scrollbar {
-  width: 3px;
-}
-.problem-solving .panel .inner-panel::-webkit-scrollbar-thumb {
-  background-color: #609bf5;
-  border-radius: 10px;
-}
-.problem-solving .panel .inner-panel::-webkit-scrollbar-thumb:hover {
-  background-color: #3683f5;
 }
