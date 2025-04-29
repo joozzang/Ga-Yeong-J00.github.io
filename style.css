@@ -457,6 +457,13 @@ h1 {
   transition: max-height 0.5s ease, opacity 0.5s ease;
   margin-bottom: 0;
 }
+.panel p {
+  font-family: "GyeonggiTitleLight";
+  font-size: 1.1em;
+  padding: 0;
+  margin: 15px 0;
+  line-height: 1.5;
+}
 .panel.open {
   opacity: 1;
   padding: 0 10px 10px 10px;
@@ -574,8 +581,8 @@ h1 {
   transform: translateX(-50%);
   background-color: #3683f5;
   color: white;
-  font-size: 1em;
-  padding: 15px 30px;
+  font-size: 1.5em;
+  padding: 15px 40px;
   border: none;
   border-radius: 15px;
   cursor: pointer;
@@ -602,7 +609,8 @@ h1 {
 /* ------------------ Project Detail ------------------ */
 /* ------------------ Modal & Slider ------------------ */
 .drawry,
-.lawbot {
+.lawbot,
+.jeju {
   max-width: 850px;
 }
 
@@ -672,12 +680,14 @@ h1 {
 }
 
 #prevButton,
-#lawprevButton {
+#lawprevButton,
+#jejuPrevButton {
   left: 0;
 }
 
 #nextButton,
-#lawnextButton {
+#lawnextButton,
+#jejuNextButton {
   right: 0;
 }
 
