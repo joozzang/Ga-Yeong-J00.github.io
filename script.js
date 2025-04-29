@@ -161,8 +161,8 @@ function setupSlideNavigation(modalId, prevId, nextId, slideClass) {
 
 setupSlideNavigation(
   "proj1DetailModal",
-  "jejuprevButton",
-  "jejunextButton",
+  "jejuPrevButton",
+  "jejuNextButton",
   ".slide"
 );
 setupSlideNavigation(
