@@ -22,7 +22,12 @@ window.onload = () => {
 /* ------------------ Modal Open/Close ------------------ */
 function openModal(id) {
   const modal = document.getElementById(id);
-  if (modal) modal.classList.add("show");
+  if (modal) {
+    modal.classList.add("show");
+
+    // 아코디언 다시 초기화
+    initAccordions(modal);
+  }
 }
 
 function closeModal(id) {
@@ -67,6 +72,10 @@ toggleBtn.addEventListener("click", () => {
 function initAccordions(scope = document) {
   const accordions = scope.querySelectorAll(".accordion");
   accordions.forEach((acc) => {
+    // 중복 방지: 이미 이벤트가 있으면 패스
+    if (acc.dataset.initialized === "true") return;
+    acc.dataset.initialized = "true";
+
     acc.addEventListener("click", function () {
       this.classList.toggle("active");
       const panel = this.nextElementSibling;
