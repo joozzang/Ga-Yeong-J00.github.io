@@ -244,6 +244,33 @@ nav a:hover {
   flex: 1;
   text-align: left;
 }
+.profile,
+.profile-body {
+  scrollbar-width: thin;
+  scrollbar-color: #609bf5 transparent;
+}
+
+.profile::-webkit-scrollbar,
+.profile-body::-webkit-scrollbar {
+  width: 3px;
+}
+
+.profile::-webkit-scrollbar-track,
+.profile-body::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.profile::-webkit-scrollbar-thumb,
+.profile-body::-webkit-scrollbar-thumb {
+  background-color: #609bf5;
+  border-radius: 10px;
+  border: none;
+}
+
+.profile::-webkit-scrollbar-thumb:hover,
+.profile-body::-webkit-scrollbar-thumb:hover {
+  background-color: #3683f5;
+}
 
 /* ------------------ Profile Text ------------------ */
 h1,
@@ -1060,22 +1087,273 @@ h1 {
 .slider:not(:has(#page1.active)) .social-icons {
   display: none;
 }
-@media screen and (max-width: 768px) {
-  .profile-body {
-    flex-direction: column;
+/* 반응형 - 1024px 이하 */
+@media screen and (max-width: 1024px) {
+  .container {
+    gap: 30px;
+    height: auto;
+  }
+
+  .name {
+    font-size: 7em;
+  }
+
+  nav a {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    width: 160px;
   }
 
   .profile_img {
-    max-width: 250px;
-    aspect-ratio: 3 / 4;
+    width: 300px;
+    height: 400px;
   }
 
-  .profile p,
-  .profile h3 {
+  .career button span {
+    font-size: 1em;
+  }
+
+  .project-card {
+    width: 240px;
+    height: 180px;
+  }
+  .project-card-img {
+    width: 240px;
+    height: 180px;
+  }
+
+  .project-description-inline {
+    font-size: 1.2em;
+  }
+
+  .detail-btn {
+    font-size: 1.2em;
+    padding: 10px 30px;
+  }
+}
+
+/* 반응형 - 768px 이하 */
+@media screen and (max-width: 768px) {
+  .name {
+    font-size: 5em;
+    margin-top: 80px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  nav a {
+    width: 80%;
+    font-size: 1.3em;
+    padding: 15px;
+  }
+
+  .profile-body {
+    align-items: center;
+  }
+
+  .profile_img {
+    width: 280px;
+    height: auto;
+    aspect-ratio: 3 / 4; /* 유지하고 싶은 비율 적용 */
+  }
+
+  .profile-right {
+    text-align: center;
+    padding: 10px;
+  }
+
+  .profile h1,
+  .profile h3,
+  .profile p {
     font-size: 1.2em;
   }
 
   .profile li {
     font-size: 1em;
+  }
+  .career ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .career button {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .tab-container,
+  .inner-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .image-slide img {
+    width: 90%;
+    height: auto;
+  }
+  .project-card-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .project-card {
+    width: 100%;
+    height: auto;
+    max-width: 320px;
+  }
+
+  .project-card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-inner {
+    transform: none !important;
+  }
+
+  .card-front,
+  .card-back {
+    position: relative;
+    transform: none !important;
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+
+  .project-description-inline {
+    font-size: 1.2em;
+  }
+
+  .detail-btn {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+}
+/* 반응형 - 480px 이하 */
+@media screen and (max-width: 480px) {
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .name {
+    font-size: 2.5em;
+    padding: 25px;
+    letter-spacing: 2px;
+    text-align: center;
+    transform: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+  }
+
+  nav a {
+    width: 100%;
+    font-size: 1.5em;
+    padding: 20px 20px;
+  }
+  .profile_img {
+    width: 200px;
+    height: auto;
+  }
+
+  .profile h1,
+  .profile h3,
+  .profile p {
+    font-size: 1em;
+  }
+
+  .profile li {
+    font-size: 0.9em;
+  }
+
+  .profile-body {
+    padding: 0 10px;
+  }
+
+  .profile-right {
+    padding: 0;
+  }
+
+  .project-card {
+    width: 90%;
+    height: auto;
+  }
+
+  .project-card-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .accordion {
+    font-size: 1.2em;
+    padding: 10px;
+  }
+
+  .accordion-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tab-buttons {
+    flex-wrap: wrap;
+  }
+
+  .tab-button {
+    font-size: 1em;
+    flex: 1 0 45%;
+    text-align: center;
+  }
+
+  .tab-contents {
+    font-size: 0.9em;
+  }
+
+  .detail-btn {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  .project-description-inline {
+    font-size: 1em;
+    line-height: 1.5;
+  }
+
+  .detail-btn {
+    font-size: 0.9em;
+    padding: 8px 16px;
+  }
+
+  .project-card {
+    max-width: 100%;
+  }
+
+  .slider {
+    padding: 0 10px;
+  }
+
+  .slide {
+    padding: 0 10px;
   }
 }
