@@ -1060,3 +1060,22 @@ h1 {
 .slider:not(:has(#page1.active)) .social-icons {
   display: none;
 }
+@media screen and (max-width: 768px) {
+  .profile-body {
+    flex-direction: column;
+  }
+
+  .profile_img {
+    max-width: 250px;
+    aspect-ratio: 3 / 4;
+  }
+
+  .profile p,
+  .profile h3 {
+    font-size: 1.2em;
+  }
+
+  .profile li {
+    font-size: 1em;
+  }
+}
