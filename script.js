@@ -27,7 +27,18 @@ function openModal(id) {
 
 function closeModal(id) {
   const modal = document.getElementById(id);
-  if (modal) modal.classList.remove("show");
+  if (modal) {
+    modal.classList.remove("show");
+
+    const projectModals = [
+      "proj1DetailModal",
+      "proj2DetailModal",
+      "proj3DetailModal",
+    ];
+    if (projectModals.includes(id)) {
+      openModal("projectsModal");
+    }
+  }
 }
 
 window.addEventListener("keydown", (event) => {
@@ -53,20 +64,22 @@ toggleBtn.addEventListener("click", () => {
 });
 
 /* ------------------ Accordion ------------------ */
-const accordions = document.querySelectorAll(".accordion");
-accordions.forEach((acc) => {
-  acc.addEventListener("click", function () {
-    this.classList.toggle("active");
-    const panel = this.nextElementSibling;
-    if (panel.style.maxHeight) {
-      panel.style.maxHeight = null;
-      panel.classList.remove("open");
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-      panel.classList.add("open");
-    }
+function initAccordions(scope = document) {
+  const accordions = scope.querySelectorAll(".accordion");
+  accordions.forEach((acc) => {
+    acc.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const panel = this.nextElementSibling;
+      if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        panel.classList.remove("open");
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        panel.classList.add("open");
+      }
+    });
   });
-});
+}
 
 /* ------------------ Project Section ------------------ */
 const projectCards = document.querySelectorAll(".project-card");
@@ -118,12 +131,18 @@ detailBtn.addEventListener("click", () => {
   openModal(targetModalId);
 });
 
-/* ------------------ Slide Navigation (Multi Modal) ------------------ */
-function setupSlideNavigation(modalId, prevId, nextId, slideClass) {
+/* ------------------ Slide Navigation (Multi Modal) ------------------ */ function setupSlideNavigation(
+  modalId,
+  prevId,
+  nextId,
+  slideClass,
+  socialSlideId = null
+) {
   const modal = document.getElementById(modalId);
   const slides = modal.querySelectorAll(slideClass);
   const nextButton = modal.querySelector(`#${nextId}`);
   const prevButton = modal.querySelector(`#${prevId}`);
+  const linkIcons = modal.querySelector(".link-icons");
   let currentSlide = 0;
 
   function updateButtons() {
@@ -135,8 +154,21 @@ function setupSlideNavigation(modalId, prevId, nextId, slideClass) {
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
-      slide.classList.toggle("active", i === index);
+      slide.classList.remove("active");
     });
+    const target = slides[index];
+    if (target) {
+      target.classList.add("active");
+
+      // ✅ 해당 슬라이드 내부 accordion 다시 init
+      initAccordions(target);
+
+      // ✅ 소셜 아이콘은 특정 페이지에서만 보이게
+      if (linkIcons && socialSlideId) {
+        linkIcons.style.display = target.id === socialSlideId ? "flex" : "none";
+      }
+    }
+
     updateButtons();
   }
 
@@ -163,15 +195,23 @@ setupSlideNavigation(
   "proj1DetailModal",
   "jejuPrevButton",
   "jejuNextButton",
-  ".slide"
+  ".slide",
+  "jejuPage1"
 );
 setupSlideNavigation(
   "proj2DetailModal",
   "lawprevButton",
   "lawnextButton",
-  ".slide"
+  ".slide",
+  "lawpage1"
 );
-setupSlideNavigation("proj3DetailModal", "prevButton", "nextButton", ".slide");
+setupSlideNavigation(
+  "proj3DetailModal",
+  "prevButton",
+  "nextButton",
+  ".slide",
+  "page1"
+);
 
 /* ------------------ Image Sliders ------------------ */
 function setupImageSlider(modalId, imagePrefix) {
@@ -246,7 +286,7 @@ const tabContents = document.querySelectorAll(".tab-content");
 
 tabButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    const tabGroup = button.closest(".tab-container"); // 탭 컨테이너 찾기
+    const tabGroup = button.closest(".tab-container");
     const buttonsInGroup = tabGroup.querySelectorAll(".tab-button");
     const contentsInGroup = tabGroup.querySelectorAll(".tab-content");
 
@@ -292,52 +332,57 @@ accordionButtons.forEach((btn) => {
     }, 300);
   });
 });
+
 const openProblemModalButtons = document.querySelectorAll(
   ".open-problem-modal"
 );
 const closeProblemModalButtons = document.querySelectorAll(
   ".problem-modal-close"
 );
-const projectModal = document.getElementById("proj3DetailModal"); // drawry 모달
+const projectModal = document.getElementById("proj3DetailModal");
 
-// 문제 모달 열기
 openProblemModalButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const target = button.getAttribute("data-target");
     const modal = document.getElementById(target);
 
     if (projectModal) {
-      projectModal.classList.remove("show"); // 👉 drawry 모달 숨기기
+      projectModal.classList.remove("show");
     }
 
     if (modal) {
-      modal.classList.add("show"); // 👉 problem-modal 열기
+      modal.classList.add("show");
     }
   });
 });
 
-// 문제 모달 닫기
 closeProblemModalButtons.forEach((closeBtn) => {
   closeBtn.addEventListener("click", () => {
     const modal = closeBtn.closest(".problem-modal");
 
     if (modal) {
-      modal.classList.remove("show"); // 👉 problem-modal 닫기
+      modal.classList.remove("show");
     }
 
     if (projectModal) {
-      projectModal.classList.add("show"); // 👉 drawry 모달 다시 열기
+      projectModal.classList.add("show");
     }
   });
 });
 
-// 바깥 클릭 시 문제 모달 닫기
 window.addEventListener("click", (e) => {
   document.querySelectorAll(".modal").forEach((modal) => {
     if (e.target === modal) {
       modal.classList.remove("show");
 
-      // 👉 특정 모달 닫히면 experienceModal 다시 열기
+      const projectModals = [
+        "proj1DetailModal",
+        "proj2DetailModal",
+        "proj3DetailModal",
+      ];
+      if (projectModals.includes(modal.id)) {
+        openModal("projectsModal");
+      }
       if (modal.id === "microModal" || modal.id === "oledModal") {
         openModal("experienceModal");
       }
@@ -346,10 +391,10 @@ window.addEventListener("click", (e) => {
   const modals = document.querySelectorAll(".problem-modal");
   modals.forEach((modal) => {
     if (e.target === modal) {
-      modal.classList.remove("show"); // problem-modal 닫기
+      modal.classList.remove("show");
 
       if (projectModal) {
-        projectModal.classList.add("show"); // drawry 다시 열기
+        projectModal.classList.add("show");
       }
     }
   });
