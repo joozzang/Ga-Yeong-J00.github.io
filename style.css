@@ -514,6 +514,8 @@ h1 {
   transition: opacity 0.3s ease;
   cursor: pointer;
   margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .project-card-img {
@@ -579,18 +581,20 @@ h1 {
   bottom: 35px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #3683f5;
-  color: white;
+  color: #3683f5;
   font-size: 1.5em;
   padding: 15px 40px;
   border: none;
   border-radius: 15px;
+  background: none;
   cursor: pointer;
   transition: transform 0.3s;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   display: none;
 }
 .detail-btn:hover {
   transform: translateX(-50%) scale(1.1);
+  background-color: #3683f5;
 }
 
 .accordion-item h3 {
@@ -664,6 +668,30 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
 }
+/* 아이콘은 slider 기준으로 고정됨 */
+.link-icons {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 10;
+  width: 40px;
+}
+
+/* page1일 때만 보이게 */
+.slider:not(:has(#jejuPage1.active)) .link-icons {
+  display: none;
+}
+
+.slide .link-icons img {
+  transition: transform 0.2s;
+}
+
+.slide .link-icons img:hover {
+  transform: scale(1.1);
+}
 
 /* ------------------ Arrow Buttons ------------------ */
 .arrow-button {
@@ -726,13 +754,15 @@ h1 {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#pageImageNumber {
+#pageImageNumber,
+#jejupageImageNumber,
+#lawpageImageNumber {
   position: absolute;
   z-index: 10;
   font-weight: bold;
   font-size: 1.5em;
   background: rgba(255, 255, 255, 0.7);
-  color: #3683f5;
+  color: #609bf5;
   padding: 4px 8px;
   border-radius: 6px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -850,6 +880,9 @@ h1 {
 .tab-contents.role {
   min-height: 250px;
 }
+.tab-contents.jeju {
+  min-height: 10px;
+}
 .tab-contents ul {
   list-style: none;
   padding: 0;
@@ -878,6 +911,15 @@ h1 {
   padding-bottom: 8px;
   box-sizing: border-box;
 }
+.jeju #jejuPage2 {
+  height: 100%; /* 또는 400px, 80vh 등 구체적 높이 */
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #609bf5 transparent;
+  position: relative;
+}
+
 #page3 .panel {
   overflow-y: auto;
   scroll-behavior: smooth;
@@ -997,4 +1039,147 @@ h1 {
 .open-problem-modal.active {
   background-color: #3683f5;
   color: #ffffff;
+}
+
+/* page1이 active일 때만 보이게 (예비 보완) */
+.slider:not(:has(#page1.active)) .social-icons {
+  display: none;
+}
+/* ------------------ Responsive Design ------------------ */
+@media (max-width: 1024px) {
+  .container {
+    height: auto;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .name {
+    font-size: 6em;
+  }
+
+  nav a {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    width: 150px;
+  }
+
+  .profile_img {
+    width: 300px;
+    height: 400px;
+  }
+
+  .profile p,
+  .profile h3 {
+    font-size: 1.2em;
+  }
+
+  .career button {
+    padding: 25px;
+  }
+
+  .slide {
+    padding: 0 10px;
+  }
+
+  .tab-container,
+  .inner-container {
+    width: 100%;
+  }
+
+  .tab-buttons {
+    flex-wrap: wrap;
+  }
+
+  .tab-buttons .tab-button {
+    font-size: 1em;
+    padding: 8px 12px;
+  }
+
+  .project-card-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .name {
+    font-size: 4em;
+  }
+
+  .project-card {
+    width: 90%;
+    height: 180px;
+  }
+
+  .project-card-img {
+    width: 100%;
+    height: 180px;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .image-slide img {
+    width: 100%;
+    height: auto;
+  }
+
+  .image-slide h3 {
+    font-size: 0.9em;
+    padding: 3px 6px;
+  }
+
+  .arrow-button {
+    font-size: 2em;
+  }
+
+  .detail-btn {
+    font-size: 1.2em;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 2.8em;
+  }
+
+  .career ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .profile-left,
+  .profile-right {
+    padding: 10px;
+  }
+
+  .social-icons {
+    bottom: 5px;
+    right: 5px;
+    gap: 8px;
+  }
+
+  .slider .social-icons {
+    top: 5px;
+    left: 5px;
+    flex-direction: row;
+  }
+
+  .image-slider-controls button {
+    font-size: 0.9em;
+  }
+
+  .accordion {
+    font-size: 1.2em;
+  }
+
+  .tab-contents {
+    padding: 5px;
+  }
+
+  .tab-buttons {
+    gap: 6px;
+  }
 }
