@@ -741,7 +741,7 @@ h1 {
 }
 
 .slide .link-icons img {
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
 
 .slide .link-icons img:hover {
@@ -760,8 +760,12 @@ h1 {
   cursor: pointer;
   padding: 0;
   z-index: 1000;
+  transition: transform 0.2s ease;
 }
-
+.arrow-button:hover {
+  color: rgb(255, 255, 183);
+  transform: translateY(-50%) scale(1.2);
+}
 #prevButton,
 #lawprevButton,
 #jejuPrevButton {
@@ -898,8 +902,10 @@ h1 {
   background-color: #f0f4ff;
   border: 1px solid #d0d7e2;
   border-radius: 8px;
+  transition: transform 0.2s ease;
 }
-.tab-button.active {
+.tab-button.active,
+.tab-button:hover {
   background-color: #3683f5;
   color: white;
 }
