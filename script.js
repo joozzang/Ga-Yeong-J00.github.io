@@ -63,9 +63,25 @@ document.querySelectorAll(".modal").forEach((modal) => {
 });
 
 /* ------------------ Theme Toggle ------------------ */
+
 const toggleBtn = document.getElementById("theme-toggle");
+
+function updateIconImagesForTheme(isDark) {
+  const icons = document.querySelectorAll(".icon-img");
+  icons.forEach((img) => {
+    const newSrc = isDark ? img.dataset.dark : img.dataset.light;
+    if (newSrc) img.src = newSrc;
+  });
+}
+
 toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
+  const isDark = document.body.classList.toggle("dark-mode");
+  updateIconImagesForTheme(isDark);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const isDark = document.body.classList.contains("dark-mode");
+  updateIconImagesForTheme(isDark);
 });
 
 /* ------------------ Accordion ------------------ */
