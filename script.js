@@ -355,10 +355,6 @@ openProblemModalButtons.forEach((button) => {
     const target = button.getAttribute("data-target");
     const modal = document.getElementById(target);
 
-    if (projectModal) {
-      projectModal.classList.remove("show");
-    }
-
     if (modal) {
       modal.classList.add("show");
     }
@@ -371,10 +367,6 @@ closeProblemModalButtons.forEach((closeBtn) => {
 
     if (modal) {
       modal.classList.remove("show");
-    }
-
-    if (projectModal) {
-      projectModal.classList.add("show");
     }
   });
 });
