@@ -1311,7 +1311,7 @@ body.dark-mode .open-problem-modal.active {
   }
 
   .modal-content {
-    max-height: calc(100vh - 120px);
+    max-height: calc(100vh - 200px);
     width: 85%;
     padding: 20px;
     overflow-y: auto;
@@ -1445,6 +1445,14 @@ body.dark-mode .open-problem-modal.active {
     bottom: 0;
     display: none;
   }
+  #pageImageNumber,
+  #jejupageImageNumber,
+  #lawpageImageNumber {
+    font-size: 0.8em;
+  }
+  .image-slider-controls button {
+    font-size: 0.8em;
+  }
   /*----------------accordion & panel ---------------- */
   .accordion {
     font-size: 1em;
@@ -1500,12 +1508,12 @@ body.dark-mode .open-problem-modal.active {
     display: flex;
     align-items: center;
   }
+  .link-icons img {
+    display: block;
+  }
   .slide .link-icons img {
     width: 3%; /* 아이콘 작게 */
     height: 3%;
-  }
-  .link-icons img {
-    display: block;
   }
   .image-slide img {
     width: 100%;
@@ -1518,22 +1526,20 @@ body.dark-mode .open-problem-modal.active {
     padding: 0;
   }
 
-  .tab-buttons {
-    flex-wrap: wrap;
-  }
-  .tab-button .label {
-    display: none;
-  }
-
-  .tab-button {
-    padding: 10px 10px;
-    font-size: 0.8em;
-    text-align: center;
+  .modal-content.jeju,
+  .modal-content.lawbot,
+  .modal-content.drawry,
+  .modal-content.projects {
+    overflow-y: scroll; /* 스크롤 동작은 유지 */
   }
 
-  .tab-contents {
-    font-size: 0.8em;
+  .modal-content.jeju::-webkit-scrollbar,
+  .modal-content.lawbot::-webkit-scrollbar,
+  .modal-content.drawry::-webkit-scrollbar {
+    display: none; /* 스크롤바 표시 안함 */
   }
+
+  /*----------------slider ---------------- */
 
   .slider {
     padding: 0 10px;
@@ -1553,29 +1559,36 @@ body.dark-mode .open-problem-modal.active {
   .slider-section h3 {
     font-size: 0.8em;
   }
-  #pageImageNumber,
-  #jejupageImageNumber,
-  #lawpageImageNumber {
-    font-size: 0.8em;
-  }
-  .modal-content.jeju,
-  .modal-content.lawbot,
-  .modal-content.drawry,
-  .modal-content.projects {
-    overflow-y: scroll; /* 스크롤 동작은 유지 */
-  }
 
-  .modal-content.jeju::-webkit-scrollbar,
-  .modal-content.lawbot::-webkit-scrollbar,
-  .modal-content.drawry::-webkit-scrollbar {
-    display: none; /* 스크롤바 표시 안함 */
-  }
-
-  .image-slider-controls button {
-    font-size: 0.8em;
-  }
   .arrow-button {
     font-size: 2em;
+  }
+  /*----------------tab-button ---------------- */
+
+  .tab-buttons {
+    flex-wrap: wrap;
+  }
+  .tab-button .label {
+    display: none;
+  }
+
+  .tab-button {
+    padding: 10px 10px;
+    font-size: 0.8em;
+    text-align: center;
+  }
+
+  .tab-contents {
+    font-size: 0.8em;
+  }
+
+  .open-problem-modal {
+    font-size: 0.85em;
+    padding: 10px;
+    margin: 10px 0;
+  }
+  .accordion.problem-solving-ex {
+    font-size: 0.9em;
   }
   .problem-modal-content {
     padding: 10px 20px;
@@ -1623,10 +1636,5 @@ body.dark-mode .open-problem-modal.active {
   #growth-modal3 .problem-solving-row .content br,
   #growth-modal4 .problem-solving-row .content br {
     display: none;
-  }
-  .open-problem-modal {
-    font-size: 0.85em;
-    padding: 10px;
-    margin: 10px 0;
   }
 }
