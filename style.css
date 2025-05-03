@@ -1576,6 +1576,53 @@ body.dark-mode .open-problem-modal.active {
   .arrow-button {
     font-size: 2em;
   }
+  .problem-modal-content {
+    padding: 10px 20px;
+    width: 85%;
+    max-width: none;
+  }
+
+  .problem-modal-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+  }
+
+  .problem-modal-content h2 {
+    font-size: 1.2em;
+    margin: 5px 0;
+  }
+
+  .problem-solving-row {
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .problem-solving-row .label {
+    margin-top: 10px;
+    font-size: 1.1em;
+    min-width: auto;
+  }
+
+  .problem-solving-row .label.help {
+    margin-top: 8px;
+  }
+
+  .problem-solving-row .content {
+    font-size: 0.95em;
+    line-height: 1.7;
+    margin-top: 5px;
+  }
+
+  .problem-solving-row .content li {
+    font-size: 0.95em;
+  }
+  #growth-modal1 .problem-solving-row .content br,
+  #growth-modal2 .problem-solving-row .content br,
+  #growth-modal3 .problem-solving-row .content br,
+  #growth-modal4 .problem-solving-row .content br {
+    display: none;
+  }
   .open-problem-modal {
     font-size: 0.85em;
     padding: 10px;
