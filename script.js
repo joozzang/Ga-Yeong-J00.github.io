@@ -324,6 +324,17 @@ tabButtons.forEach((button) => {
   });
 });
 
+document.querySelectorAll(".tab-button").forEach((btn) => {
+  const text = btn.textContent.trim();
+  const icon = text.slice(0, 2); // 이모지 한 개는 보통 2글자
+  const label = text.slice(2).trim();
+
+  btn.innerHTML = `
+    <span class="icon">${icon}</span>
+    <span class="label">${label}</span>
+  `;
+});
+
 /* ------------------ Inner Accordion ------------------ */
 const innerAccordions = document.querySelectorAll(".inner-accordion");
 innerAccordions.forEach((btn) => {
@@ -420,3 +431,6 @@ window.addEventListener("click", (e) => {
     }
   });
 });
+if (window.innerWidth <= 768) {
+  document.querySelectorAll(".panel br").forEach((br) => br.remove());
+}

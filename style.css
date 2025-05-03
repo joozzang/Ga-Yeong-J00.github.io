@@ -1288,7 +1288,7 @@ body.dark-mode .open-problem-modal.active {
 /* ------------------ Responsive: 768px 이하 ------------------ */
 @media screen and (max-width: 768px) {
   .container {
-    height: 90vh;
+    max-height: calc(100vh - 120px);
     padding: 20px;
   }
   .name {
@@ -1311,6 +1311,7 @@ body.dark-mode .open-problem-modal.active {
   }
 
   .modal-content {
+    max-height: calc(100vh - 120px);
     width: 85%;
     padding: 20px;
     overflow-y: auto;
@@ -1448,9 +1449,8 @@ body.dark-mode .open-problem-modal.active {
   }
   /*----------------accordion & panel ---------------- */
   .accordion {
-    font-size: 1.1em;
+    font-size: 1em;
     padding: 15px 10px;
-    gap: 15px;
   }
 
   .accordion-icon {
@@ -1473,8 +1473,11 @@ body.dark-mode .open-problem-modal.active {
   }
   .panel p {
     font-size: 1em;
+    text-align: left;
   }
-
+  .panel h3 {
+    font-size: 1em;
+  }
   .link-icons {
     position: static; /* 필요에 따라 조정 */
     flex-direction: row; /* 가로 정렬 */
@@ -1508,16 +1511,19 @@ body.dark-mode .open-problem-modal.active {
   .tab-container,
   .inner-container {
     width: 100%;
-    padding: 0 10px;
+    padding: 0;
   }
 
   .tab-buttons {
     flex-wrap: wrap;
   }
+  .tab-button .label {
+    display: none;
+  }
 
   .tab-button {
-    font-size: 1em;
-    flex: 1 0 45%;
+    padding: 10px 10px;
+    font-size: 0.8em;
     text-align: center;
   }
 
@@ -1548,10 +1554,27 @@ body.dark-mode .open-problem-modal.active {
   #lawpageImageNumber {
     font-size: 0.8em;
   }
+  .modal-content.jeju,
+  .modal-content.lawbot,
+  .modal-content.drawry {
+    overflow-y: scroll; /* 스크롤 동작은 유지 */
+  }
+
+  .modal-content.jeju::-webkit-scrollbar,
+  .modal-content.lawbot::-webkit-scrollbar,
+  .modal-content.drawry::-webkit-scrollbar {
+    display: none; /* 스크롤바 표시 안함 */
+  }
+
   .image-slider-controls button {
     font-size: 0.8em;
   }
   .arrow-button {
     font-size: 2em;
+  }
+  .open-problem-modal {
+    font-size: 1em;
+    padding: 10px;
+    margin: 10px 0;
   }
 }
