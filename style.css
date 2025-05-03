@@ -346,7 +346,7 @@ h1 {
 .oled {
   max-width: 700px;
   overflow-y: auto;
-  max-height: 80vh;
+  max-height: 90vh;
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: #609bf5 transparent;
@@ -1396,28 +1396,26 @@ body.dark-mode .open-problem-modal.active {
     width: 100%;
   }
   .how ul {
-    padding: 20px;
-    padding-left: 15px; /* 왼쪽도 살짝 여유 */
+    padding-left: 15px;
     padding-right: 15px;
-    text-align: left; /* 모바일은 왼쪽 정렬이 더 자연스러움 */
+    text-align: left;
   }
 
   .how ul li {
     font-size: 1.1em;
-    line-height: 1.7; /* 줄 간격 늘리기 */
-    margin-bottom: 12px; /* 항목 간 여백 */
+    line-height: 2;
     display: flex;
     align-items: flex-start;
   }
 
   .how-icon {
     margin-right: 10px;
-    font-size: 1.4em; /* 아이콘도 약간 키워서 균형 맞춤 */
+    font-size: 1.4em;
     flex-shrink: 0;
-    line-height: 1.2;
+    line-height: 1.5;
   }
-  /* ----
-  /*-------------------------------- */
+  /*----------------accordion & panel ---------------- */
+
   .accordion {
     font-size: 1.1em;
     padding: 15px 10px;
@@ -1449,34 +1447,42 @@ body.dark-mode .open-problem-modal.active {
     max-height: calc(90vh - 300px);
     overflow-y: auto;
   }
-  .tab-container,
-  .inner-container {
-    width: 100%;
-    padding: 0 10px;
-  }
+  /*----------------projects---------------- */
 
   .project-card-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 5px; /* 카드들 간의 간격 설정 */
+    /* height: 90vh; */
+    gap: 15px; /* 카드들 간의 간격 설정 */
   }
   .project-card {
     margin: 10px;
     position: relative;
-    width: 60%;
-    height: 150px;
+    width: 80%;
+    height: 190px;
   }
 
   .project-card-img {
     width: 100%;
-    height: 150px;
+    height: 200px;
   }
   .project-instruction {
-    margin-top: 25px;
+    margin-top: 30px;
+    font-size: 1.3em;
   }
   .project-description-inline {
-    font-size: 1.2em;
+    font-size: 1.3em;
+  }
+  .detail-btn {
+    position: relative;
+    display: block; /* 모바일에서는 버튼을 보이게 */
+    font-size: 1.2em; /* 모바일에서 버튼 폰트 크기 조금 줄이기 */
+    /* padding: 12px 10px; 모바일에서 버튼 크기 적당히 조정 */
+    /* margin: 10px 0; */
+    margin: 20px 0;
+    bottom: 0;
+    display: none;
   }
 
   .card-inner {
@@ -1490,15 +1496,15 @@ body.dark-mode .open-problem-modal.active {
     transform: rotateY(180deg);
   }
 
-  .detail-btn {
-    display: block; /* 모바일에서는 버튼을 보이게 */
-    font-size: 1.2em; /* 모바일에서 버튼 폰트 크기 조금 줄이기 */
-    padding: 12px 30px; /* 모바일에서 버튼 크기 적당히 조정 */
-    bottom: -40px;
-  }
   .image-slide img {
     width: 90%;
     height: auto;
+  }
+
+  .tab-container,
+  .inner-container {
+    width: 100%;
+    padding: 0 10px;
   }
 
   .tab-buttons {
