@@ -1421,15 +1421,9 @@ body.dark-mode .open-problem-modal.active {
     width: 100%;
     height: 140px;
   }
-  .project-description-inline {
-    font-size: 1.5em;
-    line-height: 2;
-    color: #fff;
-    text-align: center;
-  }
   .project-instruction {
     transform: none;
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
   .project-description-inline {
     font-size: 1.1em;
