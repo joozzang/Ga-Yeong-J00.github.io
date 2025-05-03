@@ -662,6 +662,7 @@ h1 {
   scrollbar-color: #609bf5 transparent;
   position: relative;
 }
+
 .slide.active {
   display: block;
 }
@@ -815,21 +816,6 @@ h1 {
   color: #609bf5;
   font-size: 1em;
   cursor: pointer;
-}
-
-/* ------------------ External Links ------------------ */
-.external-links {
-  margin-top: 20px;
-  display: flex;
-  gap: 5px;
-  position: absolute;
-  bottom: 10px;
-  right: 15px;
-}
-
-.external-links img {
-  width: 30px;
-  height: 30px;
 }
 
 /* ------------------ Accordion Panels inside Slides ------------------ */
@@ -1414,12 +1400,57 @@ body.dark-mode .open-problem-modal.active {
     flex-shrink: 0;
     line-height: 1.5;
   }
-  /*----------------accordion & panel ---------------- */
+  /*----------------projects---------------- */
 
+  .project-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* height: 90vh; */
+    gap: 15px; /* 카드들 간의 간격 설정 */
+  }
+  .project-card {
+    margin: 10px;
+    position: relative;
+    width: 80%;
+    height: 190px;
+  }
+  .project-card-img {
+    width: 100%;
+    height: 200px;
+  }
+  .project-instruction {
+    margin-top: 30px;
+    font-size: 1.3em;
+  }
+  .project-description-inline {
+    font-size: 1.3em;
+  }
+  .card-inner {
+    width: 100%;
+  }
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-back {
+    transform: rotateY(180deg);
+  }
+  .detail-btn {
+    position: relative;
+    display: block; /* 모바일에서는 버튼을 보이게 */
+    font-size: 1.2em; /* 모바일에서 버튼 폰트 크기 조금 줄이기 */
+    /* padding: 12px 10px; 모바일에서 버튼 크기 적당히 조정 */
+    /* margin: 10px 0; */
+    margin: 20px 0;
+    bottom: 0;
+    display: none;
+  }
+  /*----------------accordion & panel ---------------- */
   .accordion {
     font-size: 1.1em;
     padding: 15px 10px;
-    gap: 10px;
+    gap: 15px;
   }
 
   .accordion-icon {
@@ -1443,61 +1474,34 @@ body.dark-mode .open-problem-modal.active {
   .panel p {
     font-size: 1em;
   }
-  .slide {
-    max-height: calc(90vh - 300px);
-    overflow-y: auto;
-  }
-  /*----------------projects---------------- */
 
-  .project-card-container {
+  .link-icons {
+    position: static; /* 필요에 따라 조정 */
+    flex-direction: row; /* 가로 정렬 */
+    justify-content: left;
+    gap: 5px;
+    padding: 0;
+    margin: 0;
+  }
+  .slider-section,
+  .image-slider,
+  .link-icons {
+    margin: 0;
+    padding: 0;
+  }
+  .link-icons a {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* height: 90vh; */
-    gap: 15px; /* 카드들 간의 간격 설정 */
+    align-items: center;
   }
-  .project-card {
-    margin: 10px;
-    position: relative;
-    width: 80%;
-    height: 190px;
+  .slide .link-icons img {
+    width: 15px; /* 아이콘 작게 */
+    height: 15px;
   }
-
-  .project-card-img {
-    width: 100%;
-    height: 200px;
+  .link-icons img {
+    display: block;
   }
-  .project-instruction {
-    margin-top: 30px;
-    font-size: 1.3em;
-  }
-  .project-description-inline {
-    font-size: 1.3em;
-  }
-  .detail-btn {
-    position: relative;
-    display: block; /* 모바일에서는 버튼을 보이게 */
-    font-size: 1.2em; /* 모바일에서 버튼 폰트 크기 조금 줄이기 */
-    /* padding: 12px 10px; 모바일에서 버튼 크기 적당히 조정 */
-    /* margin: 10px 0; */
-    margin: 20px 0;
-    bottom: 0;
-    display: none;
-  }
-
-  .card-inner {
-    width: 100%;
-  }
-  .card.flipped .card-inner {
-    transform: rotateY(180deg);
-  }
-
-  .card-back {
-    transform: rotateY(180deg);
-  }
-
   .image-slide img {
-    width: 90%;
+    width: 100%;
     height: auto;
   }
 
@@ -1523,9 +1527,31 @@ body.dark-mode .open-problem-modal.active {
 
   .slider {
     padding: 0 10px;
+    margin: 0;
+    justify-content: flex-start;
   }
-
+  .slide.active {
+    margin: 0;
+    padding: 0;
+  }
   .slide {
+    max-height: calc(90vh - 300px);
+    overflow-y: auto;
     padding: 0 10px;
+    margin: 0;
+  }
+  .slider-section h3 {
+    font-size: 0.8em;
+  }
+  #pageImageNumber,
+  #jejupageImageNumber,
+  #lawpageImageNumber {
+    font-size: 0.8em;
+  }
+  .image-slider-controls button {
+    font-size: 0.8em;
+  }
+  .arrow-button {
+    font-size: 2em;
   }
 }
