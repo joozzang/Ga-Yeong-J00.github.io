@@ -137,10 +137,40 @@
               <span>OLED 잔상 보상</span><br />
               <span>2022.07.20-2023.07.19</span>
             </button>
-          </li>
+          </li><li class="how-item">
+            <button class="how-btn"
+              onclick="openModal('howModal');closeModal('experienceModal');"
+            >
+              <span class="star-text">
+                <svg
+                  class="star-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <polygon
+                    points="12,2 15,10 23,10 17,15 19,23 12,18 5,23 7,15 1,10 9,10"
+                  />
+                </svg>How I Work</span
+              >
+            </button>
+          </li>          
         </ul>
       </div>
     </div>
+
+    <div id="howModal" class="modal">
+      <div class="modal-content how">
+        <div class="close" onclick="closeModal('howModal'); openModal('experienceModal')">&times;</div>
+
+        <h1>How I Work</h1>
+        <ul> <li><span class="how-icon">🎮</span> 일의 과정에서 재미를 찾으며, 문제 해결을 게임처럼 접근해 창의적인 아이디어를 도출합니다.</li>
+          <li><span class="how-icon">⚙️</span> 업무 효율성을 극대화하기 위해 자동화 도구를 활용하고, 정해진 기한 내 최상의 결과를 내는 것을 목표로 합니다.</li>
+          <li><span class="how-icon">🔍</span> 작은 디테일까지 꼼꼼하게 점검하여 실수를 방지하고, 높은 완성도를 추구합니다.</li>
+          <li><span class="how-icon">🤝</span> 팀원들의 의견을 존중하고 조율하며, 협업을 통해 더 나은 해결책을 도출합니다.</li>
+          <li><span class="how-icon">📊</span> 문제가 발생해도 끝까지 해결책을 찾으며, 데이터 기반 접근 방식으로 효과적인 해결책을 모색합니다.</li>
+        </ul>
+        </div>
+      </div>
 
     <div id="microModal" class="modal">
       <div class="modal-content micro">

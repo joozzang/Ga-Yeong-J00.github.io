@@ -400,7 +400,11 @@ window.addEventListener("click", (e) => {
       if (projectModals.includes(modal.id)) {
         openModal("projectsModal");
       }
-      if (modal.id === "microModal" || modal.id === "oledModal") {
+      if (
+        modal.id === "microModal" ||
+        modal.id === "oledModal" ||
+        modal.id === "howModal"
+      ) {
         openModal("experienceModal");
       }
     }
