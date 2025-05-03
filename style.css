@@ -1407,25 +1407,25 @@ body.dark-mode .open-problem-modal.active {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    overflow-y: auto;
     /* height: 90vh; */
-    gap: 15px; /* 카드들 간의 간격 설정 */
+    gap: 5px; /* 카드들 간의 간격 설정 */
   }
   .project-card {
-    margin: 10px;
+    /* margin: 10px; */
     position: relative;
-    width: 80%;
-    height: 190px;
+    width: 70%;
+    height: 140px;
   }
   .project-card-img {
     width: 100%;
-    height: 200px;
+    height: 140px;
   }
   .project-instruction {
-    margin-top: 30px;
     font-size: 1.3em;
   }
   .project-description-inline {
-    font-size: 1.3em;
+    font-size: 1.1em;
   }
   .card-inner {
     width: 100%;
@@ -1441,9 +1441,6 @@ body.dark-mode .open-problem-modal.active {
     position: relative;
     display: block; /* 모바일에서는 버튼을 보이게 */
     font-size: 1.2em; /* 모바일에서 버튼 폰트 크기 조금 줄이기 */
-    /* padding: 12px 10px; 모바일에서 버튼 크기 적당히 조정 */
-    /* margin: 10px 0; */
-    margin: 20px 0;
     bottom: 0;
     display: none;
   }
@@ -1451,6 +1448,7 @@ body.dark-mode .open-problem-modal.active {
   .accordion {
     font-size: 1em;
     padding: 15px 10px;
+    margin: 0;
   }
 
   .accordion-icon {
@@ -1460,9 +1458,14 @@ body.dark-mode .open-problem-modal.active {
   .panel.open {
     padding: 0;
     margin: 0;
+    max-height: none !important;
+    overflow-y: visible !important;
+    /* padding: 10px; */
   }
   .panel ul {
-    padding: 0 10px 5px 10px;
+    padding: 0 10px 0 10px;
+    max-height: none !important;
+    overflow-y: visible !important;
   }
   .panel ul li {
     font-size: 0.95em;
@@ -1472,11 +1475,11 @@ body.dark-mode .open-problem-modal.active {
     padding-left: 10px;
   }
   .panel p {
-    font-size: 1em;
+    font-size: 0.9em;
     text-align: left;
   }
   .panel h3 {
-    font-size: 1em;
+    font-size: 0.95em;
   }
   .link-icons {
     position: static; /* 필요에 따라 조정 */
@@ -1497,8 +1500,8 @@ body.dark-mode .open-problem-modal.active {
     align-items: center;
   }
   .slide .link-icons img {
-    width: 15px; /* 아이콘 작게 */
-    height: 15px;
+    width: 3%; /* 아이콘 작게 */
+    height: 3%;
   }
   .link-icons img {
     display: block;
@@ -1528,7 +1531,7 @@ body.dark-mode .open-problem-modal.active {
   }
 
   .tab-contents {
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 
   .slider {
@@ -1541,10 +1544,10 @@ body.dark-mode .open-problem-modal.active {
     padding: 0;
   }
   .slide {
-    max-height: calc(90vh - 300px);
+    max-height: calc(90vh - 200px);
     overflow-y: auto;
-    padding: 0 10px;
-    margin: 0;
+    padding: 10px;
+    margin: 0 auto;
   }
   .slider-section h3 {
     font-size: 0.8em;
@@ -1556,7 +1559,8 @@ body.dark-mode .open-problem-modal.active {
   }
   .modal-content.jeju,
   .modal-content.lawbot,
-  .modal-content.drawry {
+  .modal-content.drawry,
+  .modal-content.projects {
     overflow-y: scroll; /* 스크롤 동작은 유지 */
   }
 
@@ -1573,7 +1577,7 @@ body.dark-mode .open-problem-modal.active {
     font-size: 2em;
   }
   .open-problem-modal {
-    font-size: 1em;
+    font-size: 0.85em;
     padding: 10px;
     margin: 10px 0;
   }
