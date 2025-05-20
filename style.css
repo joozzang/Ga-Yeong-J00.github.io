@@ -717,6 +717,41 @@ h1 {
 .slide .link-icons img:hover {
   transform: scale(1.1);
 }
+/* ------------------ PDF Workflow ------------------ */
+
+#workflow-container {
+  width: 100%;
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#workflow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: top left;
+  cursor: grab;
+  width: 100%;
+  height: 300px;
+}
+#openImageModalBtn {
+  position: absolute; /* 절대 위치 지정 */
+  bottom: 10px; /* 위에서 10px 떨어진 곳 */
+  right: 10px; /* 오른쪽에서 10px 떨어진 곳 */
+  padding: 10px 10px;
+  font-size: 1em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  border-radius: 50%;
+  z-index: 10;
+}
+#openImageModalBtn:hover {
+  transform: scale(1.5);
+} /* 모달 기본 숨김 상태 */
 
 /* ------------------ Arrow Buttons ------------------ */
 .arrow-button {
@@ -1636,5 +1671,28 @@ body.dark-mode .open-problem-modal.active {
   #growth-modal3 .problem-solving-row .content br,
   #growth-modal4 .problem-solving-row .content br {
     display: none;
+  }
+  #workflow-container {
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #workflow {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  #openImageModalBtn {
+    bottom: 18px;
+    right: 5px;
+    font-size: 0.5em;
+    padding: 0;
+    /* padding: 8px; */
+    transform: scale(1); /* 기본 크기 유지 */
   }
 }

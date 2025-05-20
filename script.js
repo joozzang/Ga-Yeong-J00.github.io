@@ -434,3 +434,9 @@ window.addEventListener("click", (e) => {
 if (window.innerWidth <= 768) {
   document.querySelectorAll(".panel br").forEach((br) => br.remove());
 }
+document.getElementById("openImageModalBtn").addEventListener("click", () => {
+  window.open(
+    "https://www.canva.com/design/DAGlMSJ5xeg/2PVKRreWPLVpfWLJmbnX6w/view?utm_content=DAGlMSJ5xeg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd4436208f9",
+    "_blank"
+  );
+});
